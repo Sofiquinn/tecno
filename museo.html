@@ -8,7 +8,7 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --bg:#0F0E0B; --bg2:#171612; --bg3:#1E1C17; --bg4:#131210;
+  --bg:#0F0E0B; --bg2:#171612; --bg3:#1E1C17;
   --gold:#C9A84C; --gold-lt:#E8C97A;
   --text:#EDE8DC; --text2:#A09A8A; --text3:#6A6458; --text4:#3E3A32;
   --border:rgba(201,168,76,0.14); --border2:rgba(255,255,255,0.05);
@@ -16,7 +16,6 @@
 }
 html { scroll-behavior:smooth; }
 body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
-
 .entrada { min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:40px 24px; position:relative; overflow:hidden; }
 .entrada::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(201,168,76,0.07) 0%,transparent 70%), repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(201,168,76,0.025) 60px,rgba(201,168,76,0.025) 61px), repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(201,168,76,0.025) 60px,rgba(201,168,76,0.025) 61px); pointer-events:none; }
 .entrada-ornament { width:1px; height:60px; background:linear-gradient(to bottom,transparent,var(--gold)); margin:0 auto 32px; }
@@ -29,7 +28,6 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
 .nav-salas { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:40px; }
 .nav-btn { font-family:'DM Sans',sans-serif; font-size:12px; font-weight:500; padding:8px 18px; border-radius:2px; border:1px solid var(--border); background:transparent; color:var(--text2); cursor:pointer; letter-spacing:0.06em; transition:all 0.2s; text-decoration:none; display:inline-block; }
 .nav-btn:hover { border-color:var(--gold); color:var(--gold); }
-
 .sala { min-height:100vh; padding:80px 24px; position:relative; }
 .sala::before { content:''; position:absolute; top:0; left:0; right:0; height:1px; }
 .sala-antigua::before  { background:linear-gradient(to right,transparent,var(--amber),transparent); }
@@ -40,74 +38,48 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
 .sala-inner { max-width:960px; margin:0 auto; }
 .sala-header { margin-bottom:56px; }
 .sala-num { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; font-weight:500; margin-bottom:12px; }
-.sala-antigua .sala-num   { color:var(--amber); }
-.sala-media .sala-num     { color:var(--teal); }
-.sala-moderna .sala-num   { color:var(--blue); }
-.sala-industrial .sala-num{ color:var(--purple); }
-.sala-digital .sala-num   { color:var(--coral); }
+.sala-antigua .sala-num { color:var(--amber); }
+.sala-media .sala-num { color:var(--teal); }
+.sala-moderna .sala-num { color:var(--blue); }
+.sala-industrial .sala-num { color:var(--purple); }
+.sala-digital .sala-num { color:var(--coral); }
 .sala-header h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(30px,5vw,48px); font-weight:400; line-height:1.15; color:var(--text); margin-bottom:12px; }
 .sala-header .sala-period { font-size:13px; color:var(--text3); letter-spacing:0.08em; }
 .sala-header .sala-intro { font-size:15px; color:var(--text2); line-height:1.75; max-width:680px; margin-top:16px; border-left:2px solid var(--border); padding-left:16px; }
-
 .paneles { display:grid; gap:2px; }
 .paneles-2 { grid-template-columns:1fr 1fr; }
 .paneles-3 { grid-template-columns:1fr 1fr 1fr; }
 @media(max-width:700px) { .paneles-2,.paneles-3 { grid-template-columns:1fr; } }
-
-.panel {
-  background:var(--bg2);
-  padding:28px 28px 24px;
-  border:1px solid var(--border2);
-  position:relative;
-  transition:border-color 0.25s;
-  display:flex; flex-direction:column;
-}
+.panel { background:var(--bg2); padding:28px 28px 24px; border:1px solid var(--border2); position:relative; transition:border-color 0.25s; display:flex; flex-direction:column; }
 .panel:hover { border-color:var(--border); }
-
-.panel-featured {
-  grid-column:1/-1;
-  background:var(--bg3);
-  display:grid;
-  border:1px solid var(--border2);
-  transition:border-color 0.25s;
-}
+.panel-featured { grid-column:1/-1; background:var(--bg3); display:grid; border:1px solid var(--border2); transition:border-color 0.25s; }
 .panel-featured:hover { border-color:var(--border); }
 .panel-featured.split { grid-template-columns:1fr 1fr; }
 @media(max-width:700px) { .panel-featured.split { grid-template-columns:1fr; } }
 .panel-featured-content { padding:32px 28px; display:flex; flex-direction:column; }
-
 .panel-wide { grid-column:1/-1; }
-
 .panel-year { font-size:11px; letter-spacing:0.18em; font-weight:500; margin-bottom:10px; text-transform:uppercase; }
-.sala-antigua .panel-year   { color:var(--amber); }
-.sala-media .panel-year     { color:var(--teal); }
-.sala-moderna .panel-year   { color:var(--blue); }
-.sala-industrial .panel-year{ color:var(--purple); }
-.sala-digital .panel-year   { color:var(--coral); }
-
+.sala-antigua .panel-year { color:var(--amber); }
+.sala-media .panel-year { color:var(--teal); }
+.sala-moderna .panel-year { color:var(--blue); }
+.sala-industrial .panel-year { color:var(--purple); }
+.sala-digital .panel-year { color:var(--coral); }
 .panel h3 { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600; color:var(--text); line-height:1.2; margin-bottom:14px; }
 .panel-body { font-size:13px; color:var(--text2); line-height:1.8; flex:1; }
 .panel-body p { margin-bottom:10px; }
 .panel-body p:last-child { margin-bottom:0; }
 .panel-cite { font-size:11px; color:var(--text3); margin-top:14px; padding-top:12px; border-top:1px solid var(--border2); font-style:italic; }
-
 .sala-sep { text-align:center; padding:20px; color:var(--text4); font-size:12px; letter-spacing:0.15em; }
 .sala-sep::before,.sala-sep::after { content:'——————'; margin:0 12px; opacity:0.25; }
 .fig { opacity:0.9; }
-
-.exhibit-zone {
-  position:relative; padding:32px 28px;
-  border-right:1px solid var(--border2);
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  cursor:pointer; overflow:hidden; min-height:280px;
-}
+.exhibit-zone { position:relative; padding:32px 28px; border-right:1px solid var(--border2); display:flex; flex-direction:column; align-items:center; justify-content:center; cursor:pointer; overflow:hidden; min-height:280px; }
 @media(max-width:700px) { .exhibit-zone { border-right:none; border-bottom:1px solid var(--border2); } }
 .exhibit-zone::before { content:''; position:absolute; inset:0; opacity:0; transition:opacity 0.5s; pointer-events:none; }
-.sala-antigua  .exhibit-zone::before { background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(201,168,76,0.08) 0%,transparent 70%); }
-.sala-media    .exhibit-zone::before { background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(42,157,143,0.08) 0%,transparent 70%); }
-.sala-moderna  .exhibit-zone::before { background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(58,125,181,0.08) 0%,transparent 70%); }
+.sala-antigua .exhibit-zone::before  { background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(201,168,76,0.08) 0%,transparent 70%); }
+.sala-media .exhibit-zone::before    { background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(42,157,143,0.08) 0%,transparent 70%); }
+.sala-moderna .exhibit-zone::before  { background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(58,125,181,0.08) 0%,transparent 70%); }
 .sala-industrial .exhibit-zone::before { background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(123,111,187,0.08) 0%,transparent 70%); }
-.sala-digital  .exhibit-zone::before { background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(200,90,58,0.08) 0%,transparent 70%); }
+.sala-digital .exhibit-zone::before  { background:radial-gradient(ellipse 70% 70% at 50% 50%,rgba(200,90,58,0.08) 0%,transparent 70%); }
 .exhibit-zone:hover::before { opacity:1; }
 .exhibit-zone svg { width:100%; max-width:240px; display:block; transition:filter 0.4s; }
 .exhibit-zone:hover svg { filter:drop-shadow(0 0 22px var(--ez-color,#C9A84C)); }
@@ -115,20 +87,11 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
 .exhibit-zone:hover .exhibit-invite { opacity:1; }
 .invite-pulse { width:6px; height:6px; border-radius:50%; background:var(--ez-color,#C9A84C); animation:inv-pulse 2.2s ease-in-out infinite; }
 @keyframes inv-pulse { 0%,100%{transform:scale(1);opacity:0.6;} 50%{transform:scale(1.6);opacity:1;} }
-
 .exp-overlay { position:fixed; inset:0; z-index:900; pointer-events:none; overflow:hidden; }
 .exp-overlay.active { pointer-events:all; }
 .exp-backdrop { position:absolute; inset:0; background:rgba(8,7,5,0.65); opacity:0; transition:opacity 0.45s; cursor:pointer; }
 .exp-overlay.active .exp-backdrop { opacity:1; }
-.exp-panel {
-  position:absolute; top:0; right:0; bottom:0;
-  width:min(600px,100vw); background:#111009;
-  border-left:1px solid var(--border);
-  display:flex; flex-direction:column;
-  transform:translateX(100%);
-  transition:transform 0.52s cubic-bezier(0.16,1,0.3,1);
-  overflow:hidden;
-}
+.exp-panel { position:absolute; top:0; right:0; bottom:0; width:min(600px,100vw); background:#111009; border-left:1px solid var(--border); display:flex; flex-direction:column; transform:translateX(100%); transition:transform 0.52s cubic-bezier(0.16,1,0.3,1); overflow:hidden; }
 .exp-overlay.active .exp-panel { transform:translateX(0); }
 .exp-header { padding:24px 28px 18px; border-bottom:1px solid var(--border); display:flex; align-items:flex-start; gap:14px; flex-shrink:0; }
 .exp-sala-tag { font-size:9px; letter-spacing:0.28em; text-transform:uppercase; font-weight:600; padding:4px 10px; border:1px solid var(--ep-accent,var(--gold)); color:var(--ep-accent,var(--gold)); white-space:nowrap; align-self:flex-start; margin-top:3px; flex-shrink:0; }
@@ -141,7 +104,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
 @media(max-width:500px) { .exp-slideshow { height:200px; } }
 .slide { position:absolute; inset:0; opacity:0; transition:opacity 1s ease; }
 .slide.active { opacity:1; z-index:1; }
-.slide img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+.slide img { width:100%; height:100%; object-fit:cover; display:block; }
 .slide::after { content:''; position:absolute; inset:0; background:linear-gradient(to top,rgba(17,16,9,0.9) 0%,transparent 45%),linear-gradient(to bottom,rgba(17,16,9,0.4) 0%,transparent 30%); pointer-events:none; }
 .slide-year-badge { position:absolute; bottom:44px; left:20px; z-index:2; font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--ep-accent,var(--gold)); font-weight:500; }
 .slide-img-title { position:absolute; bottom:44px; right:20px; z-index:2; font-size:10px; color:rgba(237,232,220,0.38); letter-spacing:0.05em; text-align:right; max-width:55%; }
@@ -188,10 +151,9 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
 .exp-biblio { background:rgba(255,255,255,0.018); border-left:2px solid var(--ep-accent,var(--gold)); padding:14px 16px; margin-bottom:12px; font-size:12px; color:var(--text3); line-height:1.75; font-style:italic; }
 .exp-biblio strong { color:var(--text2); font-style:normal; }
 .exp-biblio span { display:block; margin-top:6px; color:var(--text2); font-style:normal; font-size:11px; }
-
 .pie { text-align:center; padding:48px 24px; border-top:1px solid var(--border); background:var(--bg2); }
 .pie h3 { font-family:'Cormorant Garamond',serif; font-size:18px; color:var(--gold-lt); margin-bottom:16px; font-weight:400; }
-.pie p { font-size:12px; color:var(--text3); line-height:2.2; max-width:680px; margin:0 auto; }
+.pie p { font-size:11px; color:var(--text3); line-height:2.2; max-width:760px; margin:0 auto; }
 .pie em { color:var(--text2); font-style:italic; }
 .back-top { display:inline-block; margin-top:24px; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); text-decoration:none; border:1px solid var(--border); padding:8px 20px; border-radius:2px; transition:all 0.2s; }
 .back-top:hover { background:rgba(201,168,76,0.08); }
@@ -199,7 +161,6 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
 </head>
 <body>
 
-<!-- ENTRADA -->
 <section class="entrada" id="inicio">
   <div class="entrada-ornament"></div>
   <div class="entrada-label">Museo Virtual · Eje Temático N°1</div>
@@ -220,7 +181,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
   </div>
 </section>
 
-<!-- SALA I — ANTIGÜEDAD -->
+<!-- SALA I -->
 <section class="sala sala-antigua" id="sala-antigua">
   <div class="sala-inner">
     <div class="sala-header">
@@ -229,9 +190,7 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
       <div class="sala-period">~3500 a.C. — 500 a.C.</div>
       <p class="sala-intro">Los primeros avances tecnológicos de la humanidad surgieron de la necesidad de resolver problemas concretos: mover objetos, registrar información, comprender el cosmos. Estos hitos sentaron las bases del pensamiento científico y técnico que guiaría el desarrollo de todas las civilizaciones posteriores.</p>
     </div>
-
     <div class="paneles paneles-2">
-
       <div class="panel-featured split">
         <div class="exhibit-zone" style="--ez-color:var(--amber)" data-exhibit="antigua">
           <svg viewBox="0 0 200 200" class="fig" xmlns="http://www.w3.org/2000/svg">
@@ -254,51 +213,46 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
           <div class="panel-year">~3500 a.C.</div>
           <h3>La invención de la rueda</h3>
           <div class="panel-body">
-            <p>Desarrollada en Mesopotamia, la rueda es considerada uno de los inventos más revolucionarios de la historia humana. Su aparición no fue un hecho aislado sino el resultado de una larga evolución tecnológica: primero se utilizaron troncos rodantes para desplazar objetos pesados, luego trineos, hasta llegar a la rueda sobre eje.</p>
-            <p>La invención de la rueda no solo optimizó el transporte y la agricultura, sino que también catalizó el desarrollo de nuevas tecnologías como la irrigación y la construcción monumental. Investigaciones recientes, publicadas en <em>Royal Society Open Science</em>, han desafiado la cronología tradicional, proponiendo que los orígenes de las tecnologías rotacionales podrían ser anteriores a lo que se creía (National Geographic Historia, 2024).</p>
+            <p>Desarrollada en Mesopotamia, la rueda fue el resultado de una larga evolución tecnológica: primero troncos rodantes, luego trineos, hasta llegar a la rueda sobre eje. Algunos hallazgos arqueológicos recientes desafían incluso la cronología establecida sobre su origen (National Geographic Historia, 2024).</p>
+            <p>Su impacto fue inmediato y duradero: transformó el transporte, permitió la alfarería con torno y sentó las bases de los mecanismos de transmisión de movimiento. También catalizó el desarrollo de nuevas tecnologías como la irrigación y la construcción monumental (Vivelibre, 2024).</p>
           </div>
-          <div class="panel-cite">National Geographic Historia. (2024). ¿Cuándo inventamos la rueda? Este hallazgo desafía lo que creíamos. https://historia.nationalgeographic.com.es/a/cuando-inventamos-rueda-este-hallazgo-desafia-que-creiamos_22588</div>
+          <div class="panel-cite">National Geographic Historia. (2024). ¿Cuándo inventamos la rueda? https://historia.nationalgeographic.com.es/a/cuando-inventamos-rueda-este-hallazgo-desafia-que-creiamos_22588</div>
         </div>
       </div>
-
       <div class="panel">
         <div class="panel-year">~3000 a.C.</div>
         <h3>La escritura cuneiforme y los jeroglíficos</h3>
         <div class="panel-body">
-          <p>Los sumerios en Mesopotamia y los egipcios en el Nilo desarrollaron independientemente sistemas de escritura que revolucionaron la transmisión del conocimiento. La escritura cuneiforme, grabada en tablillas de arcilla, permitió registrar transacciones comerciales, leyes y observaciones astronómicas.</p>
-          <p>National Geographic Historia (s.f.) señala que los primeros documentos propiamente escritos aparecen en Mesopotamia en torno al milenio IV a.C., siendo la ciudad de Uruk el centro de esta innovación. Por primera vez, el conocimiento podía preservarse más allá de la memoria individual, permitiendo que cada generación construyera sobre los logros de la anterior.</p>
+          <p>Los sumerios en Mesopotamia desarrollaron la escritura cuneiforme para administrar sociedades cada vez más complejas: registrar transacciones, leyes y observaciones astronómicas. Los egipcios desarrollaron los jeroglíficos de forma independiente con el mismo impulso (National Geographic Historia, 2024).</p>
+          <p>Esta tecnología comunicacional fue fundamental para la acumulación del saber científico entre generaciones. Por primera vez, el conocimiento podía preservarse más allá de la memoria individual (Wikipedia, 2024).</p>
         </div>
-        <div class="panel-cite">National Geographic Historia. (s.f.). Así se originó la escritura en la antigua Mesopotamia. https://historia.nationalgeographic.com.es/a/asi-se-origino-escritura-antigua-mesopotamia_20605</div>
+        <div class="panel-cite">National Geographic Historia. (2024). Así se originó la escritura en la antigua Mesopotamia. https://historia.nationalgeographic.com.es/a/asi-se-origino-escritura-antigua-mesopotamia_20605</div>
       </div>
-
       <div class="panel">
         <div class="panel-year">~600 a.C. — ~300 a.C.</div>
         <h3>Filosofía griega y Biblioteca de Alejandría</h3>
         <div class="panel-body">
-          <p>Los filósofos presocráticos como Tales de Mileto, Pitágoras y Heráclito comenzaron a explicar los fenómenos naturales mediante la razón y la observación, separando el conocimiento de la explicación mítica. Mark (2020) señala que este giro intelectual es considerado el nacimiento del pensamiento científico occidental.</p>
-          <p>La Biblioteca de Alejandría, fundada hacia el 300 a.C., fue el primer gran centro de investigación de la humanidad. Allí Arquímedes de Siracusa, descrito por Mark (2024) como el mayor matemático de la Antigüedad, desarrolló los principios de la palanca, la flotabilidad y la hidrostática, sentando las bases de la mecánica e hidráulica modernas.</p>
+          <p>Los filósofos presocráticos comenzaron a explicar los fenómenos naturales mediante la razón y la observación. La filosofía griega no fue solo un ejercicio intelectual: fue el primer intento sistemático de comprender la naturaleza mediante principios racionales universales (World History Encyclopedia, 2024).</p>
+          <p>La Biblioteca de Alejandría institucionalizó este conocimiento. Para Kuhn (2004), estos períodos de ciencia acumulativa (donde una comunidad comparte un mismo paradigma) son la base sobre la que se construyen las grandes revoluciones del conocimiento.</p>
         </div>
-        <div class="panel-cite">Mark, J. J. (2020). Filosofía griega. World History Encyclopedia. https://www.worldhistory.org/trans/es/1-11892/filosofia-griega/ — Mark, J. J. (2024). Arquímedes. World History Encyclopedia. https://www.worldhistory.org/trans/es/1-913/arquimedes/</div>
+        <div class="panel-cite">World History Encyclopedia. (2024). Filosofía griega. https://www.worldhistory.org/trans/es/1-11892/filosofia-griega/ — Kuhn, T. S. (2004). La estructura de las revoluciones científicas.</div>
       </div>
-
     </div>
   </div>
 </section>
 
 <div class="sala-sep">· · ·</div>
 
-<!-- SALA II — EDAD MEDIA -->
+<!-- SALA II -->
 <section class="sala sala-media" id="sala-media">
   <div class="sala-inner">
     <div class="sala-header">
       <div class="sala-num">Sala II</div>
       <h2>La Edad Media<br>y la preservación del saber</h2>
       <div class="sala-period">105 d.C. — 1440</div>
-      <p class="sala-intro">Lejos de ser una época de oscurantismo, la Edad Media fue un período de crucial preservación y enriquecimiento del conocimiento. El mundo islámico mantuvo viva la llama científica mientras Europa se reorganizaba, y la invención de la imprenta al final del período transformaría para siempre la difusión del saber.</p>
+      <p class="sala-intro">Lejos de ser una época de oscurantismo, la Edad Media fue un período de crucial preservación y enriquecimiento del conocimiento. El mundo islámico mantuvo viva la llama científica mientras Europa se reorganizaba, y la invención de la imprenta transformaría para siempre la difusión del saber.</p>
     </div>
-
     <div class="paneles paneles-2">
-
       <div class="panel-featured split">
         <div class="exhibit-zone" style="--ez-color:var(--teal)" data-exhibit="media">
           <svg viewBox="0 0 200 200" style="width:100%; max-width:240px;" class="fig" xmlns="http://www.w3.org/2000/svg">
@@ -319,40 +273,37 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
           <div class="panel-year">~830 d.C.</div>
           <h3>La Casa de la Sabiduría de Bagdad</h3>
           <div class="panel-body">
-            <p>Bajo el califato abasí, Bagdad se convirtió en el centro intelectual del mundo. La Casa de la Sabiduría (Bayt al-Hikmah) fue una institución dedicada a la traducción y el desarrollo del conocimiento, donde se vertieron al árabe los textos griegos, persas e indios.</p>
-            <p>Fue allí donde Al-Juarismi desarrolló el álgebra y el concepto de algoritmo, fundamentales para la computación moderna. Johnson (2023) destaca que la introducción del papel como material de escritura fue para la Casa de la Sabiduría tan revolucionaria como lo sería la imprenta para Europa, y que la institución atrajo a eruditos de múltiples religiones y culturas de todo el mundo islámico.</p>
+            <p>Bajo el califato abasí, la Casa de la Sabiduría (Bayt al-Hikmah) fue un proyecto de alcance civilizatorio: tradujo y preservó los textos griegos, persas e indios, y generó nuevo conocimiento. Fue un hito de transferencia cultural sin precedentes (Gordon-Conwell, s.f.).</p>
+            <p>Fue allí donde Al-Juarismi desarrolló el álgebra (cuyo nombre deriva del árabe <em>al-jabr</em>) y el concepto de algoritmo, cuya importancia para la computación moderna es incalculable (Wikipedia, 2024).</p>
           </div>
-          <div class="panel-cite">Johnson, T. M. (2023, noviembre 29). Baghdad's House of Wisdom. Gordon Conwell. https://www.gordonconwell.edu/blog/baghdads-house-of-wisdom/</div>
+          <div class="panel-cite">Gordon-Conwell Theological Seminary. (s.f.). Baghdad's House of Wisdom. https://www.gordonconwell.edu/blog/baghdads-house-of-wisdom/</div>
         </div>
       </div>
-
       <div class="panel">
         <div class="panel-year">~105 d.C.</div>
         <h3>El papel y la tecnología de la escritura</h3>
         <div class="panel-body">
-          <p>Cai Lun, funcionario de la corte imperial china durante la dinastía Han, perfeccionó en el año 105 d.C. el proceso de fabricación del papel a partir de fibras vegetales. Esta innovación resultó mucho más económica y liviana que los materiales de escritura anteriores.</p>
-          <p>Santos y Ganges & Serna Serna (s.f.) señalan que el documento más antiguo en papel de Europa es el Misal de Silos, anterior a 1036, y que los pueblos árabes introdujeron la producción de papel en la Península Ibérica entre los siglos X y XI, sentando las bases para la posterior revolución informativa de la imprenta.</p>
+          <p>Cai Lun perfeccionó en China la fabricación del papel a partir de fibras vegetales. El proceso de fabricación se mantuvo en secreto durante siglos antes de difundirse al mundo árabe y luego a Europa (Historia de los Materiales, s.f.).</p>
+          <p>Cuando el papel llegó a Europa vía el mundo árabe, combinado con la imprenta, posibilitó la revolución de la información que caracterizaría al Renacimiento (Wikipedia, 2024).</p>
         </div>
-        <div class="panel-cite">Santos y Ganges, L., &amp; Serna Serna, S. (s.f.). Historia y evolución del papel. Universidad de Burgos / UBUinvestiga. https://historiamateriales.ubuinvestiga.es/papel/</div>
+        <div class="panel-cite">Historia de los Materiales — UBU. (s.f.). El papel. https://historiamateriales.ubuinvestiga.es/papel/</div>
       </div>
-
       <div class="panel">
         <div class="panel-year">1440</div>
-        <h3>La imprenta de tipos móviles — Gutenberg</h3>
+        <h3>La imprenta de tipos móviles: Gutenberg</h3>
         <div class="panel-body">
-          <p>Johannes Gutenberg perfeccionó en Maguncia un sistema de impresión con tipos móviles de metal que permitió la reproducción masiva de textos a bajo costo. En pocas décadas, el número de libros en Europa pasó de miles a millones.</p>
-          <p>National Geographic Historia (s.f.) señala que la imprenta no solo revolucionó la fabricación de libros, sino que literalmente cambió el mundo, permitiendo que las ideas se transmitieran a largas distancias y llegaran a un público más amplio que nunca, y creando las condiciones para la Revolución Científica.</p>
+          <p>El invento de Gutenberg no fue solo técnico: transformó la sociedad al hacer accesible el conocimiento a capas de la población que jamás habían tenido contacto con libros. En pocas décadas, el número de libros en Europa pasó de miles a millones (National Geographic Historia, 2024).</p>
+          <p>Este proceso democratizó el saber y creó las condiciones para la Revolución Científica del siglo XVI (AICAD Business School, s.f.; Vivelibre, 2024).</p>
         </div>
-        <div class="panel-cite">National Geographic Historia. (s.f.). Gutenberg, el inventor que cambió el mundo. https://historia.nationalgeographic.com.es/a/gutenberg-inventor-que-cambio-mundo_11140</div>
+        <div class="panel-cite">National Geographic Historia. (2024). Gutenberg: el inventor que cambió el mundo. https://historia.nationalgeographic.com.es/a/gutenberg-inventor-que-cambio-mundo_11140</div>
       </div>
-
     </div>
   </div>
 </section>
 
 <div class="sala-sep">· · ·</div>
 
-<!-- SALA III — ERA MODERNA -->
+<!-- SALA III -->
 <section class="sala sala-moderna" id="sala-moderna">
   <div class="sala-inner">
     <div class="sala-header">
@@ -361,29 +312,25 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
       <div class="sala-period">1543 — 1700</div>
       <p class="sala-intro">Los siglos XVI y XVII presenciaron una de las transformaciones más profundas en la historia del pensamiento humano. La Revolución Científica estableció el método experimental como base del conocimiento y sentó los cimientos matemáticos sobre los que se construiría toda la tecnología moderna.</p>
     </div>
-
     <div class="paneles paneles-2">
-
       <div class="panel">
         <div class="panel-year">1543</div>
         <h3>Copérnico y el modelo heliocéntrico</h3>
         <div class="panel-body">
-          <p>En 1543, Nicolás Copérnico publicó <em>De revolutionibus orbium coelestium</em>, proponiendo que la Tierra y los planetas giran alrededor del Sol. National Geographic Historia (s.f.) destaca que durante años Copérnico desarrolló en silencio una teoría que cambiaría de manera radical nuestra visión del mundo, desplazando a la Tierra del centro del universo.</p>
-          <p>Para Kuhn (2004), el modelo copernicano es el ejemplo más claro de cambio de paradigma: una revolución científica en la que un modelo establecido es reemplazado por uno nuevo tras la acumulación de anomalías que el paradigma anterior no podía explicar.</p>
+          <p>Copérnico tardó décadas en publicar su trabajo, consciente del impacto que tendría en la visión del universo y en la doctrina de la época. Su modelo no era solo astronómico: era una declaración de que la observación racional podía superar siglos de autoridad (National Geographic Historia, 2024).</p>
+          <p>Para Kuhn (2004), el modelo copernicano es el ejemplo más claro de cambio de paradigma: un modelo establecido reemplazado por uno nuevo tras la acumulación de anomalías que el paradigma anterior no podía explicar.</p>
         </div>
-        <div class="panel-cite">National Geographic Historia. (s.f.). Nicolás Copérnico y la revolución del cosmos. https://historia.nationalgeographic.com.es/a/nicolas-copernico-y-revolucion-cosmos_13321</div>
+        <div class="panel-cite">National Geographic Historia. (2024). Nicolás Copérnico y la revolución del cosmos. https://historia.nationalgeographic.com.es/a/nicolas-copernico-y-revolucion-cosmos_13321</div>
       </div>
-
       <div class="panel">
         <div class="panel-year">1609</div>
         <h3>Galileo y el nacimiento de la física experimental</h3>
         <div class="panel-body">
-          <p>Galileo Galilei combinó la observación telescópica con el razonamiento matemático. World History Encyclopedia señala que Galileo construyó un telescopio con un aumento de hasta 33 diámetros, con el que observó las lunas de Júpiter, las fases de Venus y los cráteres de la Luna, aportando evidencias del modelo heliocéntrico.</p>
-          <p>Galileo estableció que la naturaleza está escrita en lenguaje matemático y que el experimento controlado es la forma válida de conocerla, convirtiéndolo en figura central de la Revolución Científica del siglo XVII.</p>
+          <p>El telescopio no fue solo un instrumento astronómico: representó un nuevo modo de conocer, donde el ojo humano asistido por la tecnología podía ir más allá de sus límites naturales. Con él, Galileo observó las lunas de Júpiter y aportó pruebas directas del heliocentrismo (World History Encyclopedia, 2024).</p>
+          <p>Galileo estableció que la naturaleza está escrita en lenguaje matemático y que el experimento controlado es la forma válida de conocerla (Wikipedia, 2024).</p>
         </div>
-        <div class="panel-cite">World History Encyclopedia. (2023). El telescopio y la Revolución Científica. https://www.worldhistory.org/trans/es/2-2270/el-telescopio-y-la-revolucion-cientifica/</div>
+        <div class="panel-cite">World History Encyclopedia. (2024). El telescopio y la revolución científica. https://www.worldhistory.org/trans/es/2-2270/el-telescopio-y-la-revolucion-cientifica/</div>
       </div>
-
       <div class="panel-featured split">
         <div class="exhibit-zone" style="--ez-color:var(--blue)" data-exhibit="moderna">
           <svg viewBox="0 0 200 220" class="fig" xmlns="http://www.w3.org/2000/svg">
@@ -391,7 +338,6 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
             <ellipse cx="100" cy="110" rx="60" ry="35" fill="none" stroke="#3A7DB5" stroke-width="0.8" opacity="0.45"/>
             <ellipse cx="100" cy="110" rx="35" ry="20" fill="none" stroke="#3A7DB5" stroke-width="0.8" opacity="0.55"/>
             <circle cx="100" cy="110" r="10" fill="#3A7DB5" opacity="0.7"/>
-            <circle cx="100" cy="110" r="16" fill="none" stroke="#3A7DB5" stroke-width="0.5" opacity="0.4"/>
             <circle cx="135" cy="110" r="4" fill="#3A7DB5" opacity="0.9"/>
             <circle cx="160" cy="110" r="5" fill="#3A7DB5" opacity="0.7"/>
             <circle cx="185" cy="110" r="3" fill="#3A7DB5" opacity="0.5"/>
@@ -404,31 +350,28 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
           <div class="panel-year">1687</div>
           <h3>Newton y los Principia Mathematica</h3>
           <div class="panel-body">
-            <p>En 1687, Isaac Newton publicó <em>Philosophiæ Naturalis Principia Mathematica</em>, unificando en un único sistema matemático la mecánica terrestre y la astronomía celeste. Sus tres leyes del movimiento y la ley de gravitación universal explicaron desde la caída de una manzana hasta el movimiento de los planetas.</p>
-            <p>National Geographic (2024) señala que el objetivo de Newton era proporcionar un marco físico y matemático que explicara los movimientos de los cuerpos celestes y los fenómenos terrestres de manera unificada, cambiando la concepción que existía sobre la naturaleza. Para Kuhn (2004), la mecánica newtoniana es el paradigma científico más estable de la historia moderna, dominando la física durante más de dos siglos.</p>
+            <p>Newton unificó en un único sistema matemático la mecánica terrestre y la astronomía celeste. El legado de los Principia es inmenso: sentó las bases del cálculo diferencial e integral y abrió la puerta a la ingeniería moderna. Sus tres leyes del movimiento siguen siendo la base del diseño estructural, mecánico y de transporte (National Geographic, 2024).</p>
+            <p>Para Kuhn (2004), la mecánica newtoniana representa el paradigma científico más estable de la historia moderna: dominó la física durante más de dos siglos hasta la llegada de Einstein.</p>
           </div>
-          <div class="panel-cite">National Geographic. (2024). "Principia Mathematica": el legado de Newton en la divulgación científica. https://www.nationalgeographic.com.es/ciencia/principia-mathematica-legado-newton-divulgacion-cientifica_21675</div>
+          <div class="panel-cite">National Geographic. (2024). Principia Mathematica: el legado de Newton. https://www.nationalgeographic.com.es/ciencia/principia-mathematica-legado-newton-divulgacion-cientifica_21675</div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
 <div class="sala-sep">· · ·</div>
 
-<!-- SALA IV — REVOLUCIÓN INDUSTRIAL -->
+<!-- SALA IV -->
 <section class="sala sala-industrial" id="sala-industrial">
   <div class="sala-inner">
     <div class="sala-header">
       <div class="sala-num">Sala IV</div>
       <h2>La Revolución Industrial<br>y el triunfo de la ingeniería</h2>
       <div class="sala-period">1769 — 1910</div>
-      <p class="sala-intro">La Revolución Industrial fue el momento en que la ciencia y la tecnología se fusionaron definitivamente para transformar la economía y la sociedad a una escala sin precedentes. Por primera vez en la historia, la producción de bienes dejó de depender exclusivamente del trabajo humano y animal, inaugurando una nueva era de aceleración tecnológica.</p>
+      <p class="sala-intro">La Revolución Industrial fue el momento en que la ciencia y la tecnología se fusionaron definitivamente para transformar la economía y la sociedad. Por primera vez, la producción dejó de depender exclusivamente del trabajo humano y animal, inaugurando una nueva era de aceleración tecnológica.</p>
     </div>
-
     <div class="paneles paneles-2">
-
       <div class="panel-featured split">
         <div class="exhibit-zone" style="--ez-color:var(--purple)" data-exhibit="industrial">
           <svg viewBox="0 0 200 220" class="fig" xmlns="http://www.w3.org/2000/svg">
@@ -440,11 +383,9 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
             <circle cx="183" cy="97" r="8" fill="none" stroke="#7B6FBB" stroke-width="1.2" opacity="0.6"/>
             <rect x="60" y="40" width="20" height="42" rx="3" fill="none" stroke="#7B6FBB" stroke-width="1" opacity="0.5"/>
             <path d="M65 36 Q70 28 68 20 Q66 12 72 8" fill="none" stroke="#7B6FBB" stroke-width="1" opacity="0.4" stroke-linecap="round"/>
-            <path d="M72 34 Q78 26 76 18 Q74 10 80 6" fill="none" stroke="#7B6FBB" stroke-width="1" opacity="0.3" stroke-linecap="round"/>
             <circle cx="172" cy="97" r="22" fill="none" stroke="#7B6FBB" stroke-width="1" opacity="0.4"/>
             <line x1="172" y1="75" x2="172" y2="119" stroke="#7B6FBB" stroke-width="0.8" opacity="0.3"/>
             <line x1="150" y1="97" x2="194" y2="97" stroke="#7B6FBB" stroke-width="0.8" opacity="0.3"/>
-            <path d="M55 162 Q65 145 60 155 Q70 135 75 152 Q80 138 85 158 Q90 142 95 162Z" fill="#7B6FBB" opacity="0.3"/>
             <rect x="20" y="160" width="160" height="8" rx="2" fill="#7B6FBB" opacity="0.3"/>
             <text x="100" y="195" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#7B6FBB" opacity="0.7">Máquina de vapor · 1769</text>
           </svg>
@@ -452,63 +393,56 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
         </div>
         <div class="panel-featured-content">
           <div class="panel-year">1769</div>
-          <h3>La máquina de vapor — James Watt</h3>
+          <h3>La máquina de vapor: James Watt</h3>
           <div class="panel-body">
-            <p>James Watt mejoró radicalmente la máquina de vapor incorporando el condensador separado y el movimiento rotativo. Cartwright (2023) destaca que la máquina de Watt era mucho más eficiente en potencia y consumo de combustible que los modelos anteriores, y que Watt y su socio Matthew Boulton fabricaron y vendieron casi 500 máquinas antes de que la patente caducara en 1800.</p>
-            <p>Esta transformación mecanizó la producción textil, impulsó la minería, hizo posible el ferrocarril y reorganizó completamente la sociedad, inaugurando la era industrial.</p>
+            <p>Watt mejoró radicalmente la máquina de vapor e incorporó el condensador separado y el movimiento rotativo. Trabajó en estrecha colaboración con el empresario Matthew Boulton, demostrando ya en el siglo XVIII la importancia de la vinculación entre ingeniero e industria (World History Encyclopedia, 2024).</p>
+            <p>La máquina de vapor mecanizó la producción textil, impulsó la minería, hizo posible el ferrocarril y reorganizó completamente la sociedad. En pocas décadas el mundo pasó de una economía agraria a una industrial (Vivelibre, 2024).</p>
           </div>
-          <div class="panel-cite">Cartwright, M. (2023, abril 20). La máquina de vapor de Watt. (A. Cardozo, Trad.). World History Encyclopedia. https://www.worldhistory.org/trans/es/1-21774/la-maquina-de-vapor-de-watt/</div>
+          <div class="panel-cite">World History Encyclopedia. (2024). La máquina de vapor de Watt. https://www.worldhistory.org/trans/es/1-21774/la-maquina-de-vapor-de-watt/</div>
         </div>
       </div>
-
       <div class="panel">
         <div class="panel-year">1820 — 1831</div>
-        <h3>Electromagnetismo — Ørsted, Ampère y Faraday</h3>
+        <h3>Electromagnetismo: Ørsted, Ampère y Faraday</h3>
         <div class="panel-body">
-          <p>Hans Christian Ørsted descubrió en 1820 que una corriente eléctrica genera un campo magnético. Encyclopædia Britannica señala que André-Marie Ampère publicó en 1827 su teoría electrodinámica, que no solo hizo comprensible el electromagnetismo sino también el magnetismo ordinario, identificando ambos como resultado de corrientes eléctricas.</p>
-          <p>Michael Faraday completó el cuadro al descubrir la inducción electromagnética en 1831. Estos descubrimientos son la base del motor eléctrico, el generador y toda la infraestructura eléctrica moderna, representando el encadenamiento más claro entre descubrimiento científico y aplicación tecnológica masiva.</p>
+          <p>Ørsted descubrió que una corriente eléctrica genera un campo magnético, Ampère lo formalizó matemáticamente, y Faraday descubrió la inducción electromagnética. Estas contribuciones, desarrolladas por científicos de distintos países en pocas décadas, ilustran el carácter acumulativo del conocimiento científico (Britannica, 2024).</p>
+          <p>El motor eléctrico, el generador y toda la infraestructura eléctrica moderna derivan directamente de este trabajo (Wikipedia, 2024).</p>
         </div>
-        <div class="panel-cite">Encyclopædia Britannica. (s.f.). Electromagnetism: Foundations of electrochemistry and electrodynamics. https://www.britannica.com/science/electromagnetism/Foundations-of-electrochemistry-and-electrodynamics</div>
+        <div class="panel-cite">Britannica. (2024). Electromagnetism. https://www.britannica.com/science/electromagnetism/Foundations-of-electrochemistry-and-electrodynamics</div>
       </div>
-
       <div class="panel">
         <div class="panel-year">1876 · 1895</div>
         <h3>El teléfono y los Rayos X</h3>
         <div class="panel-body">
-          <p>Alexander Graham Bell obtuvo la patente del teléfono en 1876, aunque la historia de su invención es objeto de debate histórico, con las contribuciones previas de Antonio Meucci y la disputa de Elisha Gray. En 1895, Wilhelm Röntgen descubrió los rayos X. LibreTexts (s.f.) describe estos hallazgos como ejemplos paradigmáticos de la serendipia en la ciencia, emergidos de observaciones inesperadas durante experimentos con otros objetivos.</p>
-          <p>Marie Curie profundizó estos estudios investigando la radiactividad, abriendo el camino hacia la física nuclear y el diagnóstico médico moderno.</p>
+          <p>Bell patentó el teléfono en 1876; la disputa legal con Elisha Gray, quien presentó su solicitud el mismo día, ilustra cómo el progreso tecnológico suele ser un proceso paralelo en distintos actores (Telefónica, 2024). En 1895, Röntgen descubrió los rayos X de forma casi accidental. Marie Curie, quien acuñó el término radiactividad, fue la primera persona en ganar dos premios Nobel en distintas disciplinas (LibreTexts Español, s.f.).</p>
         </div>
-        <div class="panel-cite">Encyclopædia Britannica (s.f.) — LibreTexts Química. (s.f.). Serendipia en la Ciencia: Rayos X y Radiactividad. https://espanol.libretexts.org/Bookshelves/Quimica/Qu%C3%ADmica_Introductoria%2C_Conceptual_y_GOB/Qu%C3%ADmica_para_Tiempos_Cambiantes_(Hill_y_McCreary)/03%3A_Estructura_at%C3%B3mica/3.02%3A_Serendipia_en_la_Ciencia_-_Rayos_X_y_Radiactividad</div>
+        <div class="panel-cite">Telefónica. (2024). 9 inventos tecnológicos que han cambiado el mundo. — LibreTexts Español. (s.f.). Rayos X y radiactividad.</div>
       </div>
-
       <div class="panel panel-wide">
         <div class="panel-year">1903</div>
-        <h3>El primer vuelo motorizado — Hermanos Wright</h3>
+        <h3>El primer vuelo motorizado: Hermanos Wright</h3>
         <div class="panel-body">
-          <p>El 17 de diciembre de 1903, en Kitty Hawk, Orville Wright mantuvo en el aire el Flyer I durante 12 segundos y recorrió 36 metros. La NASA (2023) señala que aquel día se realizaron cuatro vuelos en total, siendo el último el más largo, con 59 segundos y 260 metros recorridos, constituyendo el primer vuelo motorizado, controlado y sostenido de la historia.</p>
-          <p>En apenas dos décadas, los aviones pasaron de frágiles biplanos a máquinas de transporte intercontinental. La NASA destaca este hito como uno de los logros tecnológicos más transformadores de la historia humana por su impacto en la movilidad global.</p>
+          <p>El 17 de diciembre de 1903, en Kitty Hawk, Orville Wright mantuvo en el aire el Flyer I durante 12 segundos y recorrió 36 metros. Los hermanos Wright no eran científicos sino mecánicos y fabricantes de bicicletas: su logro fue posible gracias a la experimentación sistemática y la ingeniería aplicada, no a la investigación académica (NASA, 2023).</p>
+          <p>En apenas dos décadas, los aviones pasaron de frágiles biplanos a máquinas de transporte intercontinental, transformando la movilidad humana global.</p>
         </div>
-        <div class="panel-cite">NASA. (2023). 120 Years Ago: The First Powered Flight at Kitty Hawk. https://www.nasa.gov/history/120-years-ago-the-first-powered-flight-at-kitty-hawk/</div>
+        <div class="panel-cite">NASA. (2023). 120 years ago: The first powered flight at Kitty Hawk. https://www.nasa.gov/history/120-years-ago-the-first-powered-flight-at-kitty-hawk/</div>
       </div>
-
     </div>
   </div>
 </section>
 
 <div class="sala-sep">· · ·</div>
 
-<!-- SALA V — ERA DIGITAL -->
+<!-- SALA V -->
 <section class="sala sala-digital" id="sala-digital">
   <div class="sala-inner">
     <div class="sala-header">
       <div class="sala-num">Sala V</div>
       <h2>La Era Digital<br>y la aceleración tecnológica</h2>
       <div class="sala-period">1945 — presente</div>
-      <p class="sala-intro">La segunda mitad del siglo XX y los inicios del XXI han sido testigos de la transformación tecnológica más acelerada de la historia humana. La computadora, Internet y la inteligencia artificial han reconfigurado radicalmente la forma en que la humanidad produce, comunica y organiza el conocimiento, planteando nuevos y complejos desafíos sociales y éticos.</p>
+      <p class="sala-intro">La segunda mitad del siglo XX y los inicios del XXI han sido testigos de la transformación tecnológica más acelerada de la historia humana. La computadora, Internet y la inteligencia artificial han reconfigurado radicalmente la forma en que la humanidad produce, comunica y organiza el conocimiento.</p>
     </div>
-
     <div class="paneles paneles-2">
-
       <div class="panel-featured split">
         <div class="exhibit-zone" style="--ez-color:var(--coral)" data-exhibit="digital">
           <svg viewBox="0 0 200 200" class="fig" xmlns="http://www.w3.org/2000/svg">
@@ -521,81 +455,80 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
             <line x1="55" y1="100" x2="92" y2="100" stroke="#C85A3A" stroke-width="1" opacity="0.5"/><line x1="108" y1="100" x2="145" y2="100" stroke="#C85A3A" stroke-width="1" opacity="0.5"/>
             <line x1="50" y1="105" x2="50" y2="145" stroke="#C85A3A" stroke-width="1" opacity="0.5"/><line x1="100" y1="108" x2="100" y2="145" stroke="#C85A3A" stroke-width="1.5" opacity="0.7"/><line x1="150" y1="105" x2="150" y2="145" stroke="#C85A3A" stroke-width="1" opacity="0.5"/>
             <line x1="55" y1="150" x2="95" y2="150" stroke="#C85A3A" stroke-width="1" opacity="0.5"/><line x1="105" y1="150" x2="145" y2="150" stroke="#C85A3A" stroke-width="1" opacity="0.5"/>
-            <line x1="55" y1="55" x2="92" y2="92" stroke="#C85A3A" stroke-width="0.5" opacity="0.25"/><line x1="108" y1="108" x2="145" y2="145" stroke="#C85A3A" stroke-width="0.5" opacity="0.25"/>
           </svg>
           <div class="exhibit-invite"><span class="invite-pulse"></span>Explorar sala</div>
         </div>
         <div class="panel-featured-content">
           <div class="panel-year">1945</div>
-          <h3>ENIAC — el nacimiento de la computadora</h3>
+          <h3>ENIAC: el nacimiento de la computadora</h3>
           <div class="panel-body">
-            <p>La ENIAC, desarrollada en la Universidad de Pensilvania, fue la primera computadora electrónica de propósito general. Ocupaba 167 m², pesaba 27 toneladas y podía realizar 5.000 sumas por segundo.</p>
-            <p>HP Tech Takes (s.f.) destaca que la ENIAC fue diseñada originalmente para calcular tablas balísticas para el Ejército de los EE.UU., pero su programación flexible la convirtió en un hito de la computación de propósito general. Su legado abrió el camino al transistor (1947), el circuito integrado y la democratización de la informática.</p>
+            <p>La ENIAC, desarrollada por J. Presper Eckert y John Mauchly en la Universidad de Pensilvania, ocupaba 167 m², pesaba 27 toneladas y fue diseñada para calcular tablas de tiro de artillería. Podía realizar 5.000 sumas por segundo, una velocidad inimaginable en la época (HP Tech Takes, s.f.).</p>
+            <p>El transistor en 1947 y los microprocesadores democratizaron el acceso a la computación y propiciaron el surgimiento de Internet (Vivelibre, 2024).</p>
           </div>
-          <div class="panel-cite">HP Tech Takes. (s.f.). Computer History: All About the ENIAC. https://www.hp.com/us-en/shop/tech-takes/computer-history-all-about-the-eniac</div>
+          <div class="panel-cite">HP Tech Takes. (s.f.). Computer history: All about the ENIAC. https://www.hp.com/us-en/shop/tech-takes/computer-history-all-about-the-eniac</div>
         </div>
       </div>
-
       <div class="panel">
         <div class="panel-year">1957 · 1969</div>
-        <h3>Sputnik y ARPANET — hacia el mundo conectado</h3>
+        <h3>Sputnik y ARPANET: hacia el mundo conectado</h3>
         <div class="panel-body">
-          <p>El lanzamiento del Sputnik soviético en 1957 inauguró la era espacial. National Geographic España (s.f.) recorre cómo la carrera espacial fue un proceso acumulativo de hitos tecnológicos que generó desarrollos en electrónica y comunicaciones que sentarían las bases de la revolución digital.</p>
-          <p>En 1969, el Departamento de Defensa de EE.UU. creó ARPANET. National Geographic LA (2024) señala que el primer mensaje enviado fue al conectar la UCLA con el Stanford Research Institute, aunque el sistema se cayó tras las dos primeras letras. El principio de red distribuida sin punto central de fallo define la arquitectura de Internet hasta hoy.</p>
+          <p>El Sputnik soviético, lanzado el 4 de octubre de 1957, provocó pánico y admiración a partes iguales en Occidente, impulsando enormes inversiones en educación científica y electrónica (National Geographic, 2024). En respuesta, el Departamento de Defensa de EE.UU. creó ARPANET en 1969. El primer mensaje enviado fue simplemente "lo" antes de que el sistema colapsara (National Geographic América Latina, 2024).</p>
         </div>
-        <div class="panel-cite">National Geographic España. (s.f.). La carrera espacial, paso a paso. https://www.nationalgeographic.com.es/llegada-del-hombre-a-la-luna/carrera-espacial-paso-a-paso_14369 — National Geographic LA. (2024). ¿Cuál es el origen de Internet? https://www.nationalgeographicla.com/historia/2024/05/cual-es-el-origen-de-internet</div>
+        <div class="panel-cite">National Geographic. (2024). La carrera espacial, paso a paso. — National Geographic América Latina. (2024). ¿Cuál es el origen de Internet?</div>
       </div>
-
       <div class="panel">
         <div class="panel-year">1991</div>
-        <h3>World Wide Web — Tim Berners-Lee</h3>
+        <h3>World Wide Web: Tim Berners-Lee</h3>
         <div class="panel-body">
-          <p>En 1991, Tim Berners-Lee publicó en el CERN las primeras páginas de la World Wide Web. CERN (s.f.) señala que Berners-Lee propuso el sistema en 1989 con el objetivo de que los científicos del CERN pudieran compartir información automáticamente entre computadoras, y que lo que comenzó como una herramienta interna se convirtió en pocos años en una plataforma que democratizó el conocimiento a escala planetaria.</p>
+          <p>Berners-Lee creó la Web en el CERN y la puso a disposición pública de forma completamente gratuita, rechazando patentar su invento para que pudiera crecer libremente. La Web no es lo mismo que Internet: es el sistema de páginas hipertextuales que corre sobre la infraestructura de red (CERN, s.f.).</p>
+          <p>En pocos años democratizó el acceso al conocimiento a escala planetaria (Vivelibre, 2024).</p>
         </div>
         <div class="panel-cite">CERN. (s.f.). A short history of the Web. https://home.cern/science/computing/birth-web/short-history-web</div>
       </div>
-
       <div class="panel panel-wide">
         <div class="panel-year">2000s — presente</div>
         <h3>Inteligencia Artificial y el presente tecnológico</h3>
         <div class="panel-body">
-          <p>Las redes sociales (Facebook 2004, Twitter 2006, Instagram 2010) transformaron las relaciones humanas y la esfera pública. El avance del machine learning y el deep learning permitió que las máquinas aprendieran de datos. En 2022, el surgimiento de sistemas de IA generativa marcó un nuevo umbral tecnológico.</p>
-          <p>Actualmente, la inteligencia artificial y el Internet de las Cosas lideran la vanguardia tecnológica (Vivelibre, 2024). Para Kuhn (2004), este tipo de transformación representa un cambio de paradigma: no solo cambian las herramientas sino la forma en que la sociedad concibe el conocimiento, el trabajo y la creatividad humana.</p>
+          <p>Las redes sociales (Facebook 2004, Twitter 2006, Instagram 2010) transformaron la esfera pública. El avance del machine learning y el deep learning permitió que las máquinas aprendieran de datos. En 2022, la IA generativa marcó un nuevo umbral tecnológico (Vivelibre, 2024).</p>
+          <p>Para Kuhn (2004), este tipo de transformación representa un cambio de paradigma: no solo cambian las herramientas sino la forma en que la sociedad concibe el conocimiento, el trabajo y la creatividad humana, planteando nuevos y urgentes desafíos éticos para los ingenieros en sistemas.</p>
         </div>
-        <div class="panel-cite">Vivelibre. (2024). Evolución de la tecnología. https://www.vivelibre.es/evolucion-de-la-tecnologia-desde-la-prehistoria-hasta-la-era-digital/ — Kuhn, T. S. (2004). La estructura de las revoluciones científicas. Fondo de Cultura Económica.</div>
+        <div class="panel-cite">Vivelibre. (2024). Evolución de la tecnología. — Kuhn, T. S. (2004). La estructura de las revoluciones científicas. — Concepto.de. (2020). Tecnología.</div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- PIE -->
 <footer class="pie">
   <h3>Referencias bibliográficas</h3>
   <p>
     Kuhn, T. S. (2004). <em>La estructura de las revoluciones científicas</em> (2.ª ed.). Fondo de Cultura Económica.<br>
+    AICAD Business School. (s.f.). <em>Línea del tiempo de la evolución de la tecnología.</em> https://www.aicad.es/linea-del-tiempo-de-la-evolucion-de-la-tecnologia<br>
+    Vivelibre. (2024). <em>Evolución de la tecnología: desde la prehistoria hasta la era digital.</em> https://www.vivelibre.es/evolucion-de-la-tecnologia-desde-la-prehistoria-hasta-la-era-digital/<br>
+    Wikipedia. (2024). <em>Historia de la tecnología.</em> https://es.wikipedia.org/wiki/Historia_de_la_tecnolog%C3%ADa<br>
+    Wikipedia. (2024). <em>Revolución científica.</em> https://es.wikipedia.org/wiki/Revoluci%C3%B3n_cient%C3%ADfica<br>
+    Telefónica. (2024). <em>9 inventos tecnológicos que han cambiado el mundo.</em> https://www.telefonica.com/es/sala-comunicacion/blog/9-inventos-tecnologicos-cambiado-mundo/<br>
+    Concepto.de. (2020). <em>Tecnología: qué es, tipos, historia y evolución.</em> https://concepto.de/tecnologia/<br>
     National Geographic Historia. (2024). <em>¿Cuándo inventamos la rueda?</em> https://historia.nationalgeographic.com.es/a/cuando-inventamos-rueda-este-hallazgo-desafia-que-creiamos_22588<br>
-    National Geographic Historia. (s.f.). <em>Así se originó la escritura en la antigua Mesopotamia.</em> https://historia.nationalgeographic.com.es/a/asi-se-origino-escritura-antigua-mesopotamia_20605<br>
-    Mark, J. J. (2020). <em>Filosofía griega.</em> World History Encyclopedia. https://www.worldhistory.org/trans/es/1-11892/filosofia-griega/<br>
-    Mark, J. J. (2024). <em>Arquímedes.</em> World History Encyclopedia. https://www.worldhistory.org/trans/es/1-913/arquimedes/<br>
-    Santos y Ganges, L., &amp; Serna Serna, S. (s.f.). <em>Historia y evolución del papel.</em> Universidad de Burgos / UBUinvestiga. https://historiamateriales.ubuinvestiga.es/papel/<br>
-    Johnson, T. M. (2023). <em>Baghdad's House of Wisdom.</em> Gordon Conwell. https://www.gordonconwell.edu/blog/baghdads-house-of-wisdom/<br>
-    National Geographic Historia. (s.f.). <em>Gutenberg, el inventor que cambió el mundo.</em> https://historia.nationalgeographic.com.es/a/gutenberg-inventor-que-cambio-mundo_11140<br>
-    National Geographic Historia. (s.f.). <em>Nicolás Copérnico y la revolución del cosmos.</em> https://historia.nationalgeographic.com.es/a/nicolas-copernico-y-revolucion-cosmos_13321<br>
-    World History Encyclopedia. (2023). <em>El telescopio y la Revolución Científica.</em> https://www.worldhistory.org/trans/es/2-2270/el-telescopio-y-la-revolucion-cientifica/<br>
-    National Geographic. (2024). <em>"Principia Mathematica": el legado de Newton en la divulgación científica.</em> https://www.nationalgeographic.com.es/ciencia/principia-mathematica-legado-newton-divulgacion-cientifica_21675<br>
-    Cartwright, M. (2023). <em>La máquina de vapor de Watt.</em> World History Encyclopedia. https://www.worldhistory.org/trans/es/1-21774/la-maquina-de-vapor-de-watt/<br>
-    Encyclopædia Britannica. (s.f.). <em>Electromagnetism: Foundations of electrochemistry and electrodynamics.</em> https://www.britannica.com/science/electromagnetism/Foundations-of-electrochemistry-and-electrodynamics<br>
-    LibreTexts Química. (s.f.). <em>Serendipia en la Ciencia — Rayos X y Radiactividad.</em> https://espanol.libretexts.org/Bookshelves/Quimica/Qu%C3%ADmica_Introductoria%2C_Conceptual_y_GOB/Qu%C3%ADmica_para_Tiempos_Cambiantes_(Hill_y_McCreary)/03%3A_Estructura_at%C3%B3mica/3.02%3A_Serendipia_en_la_Ciencia_-_Rayos_X_y_Radiactividad<br>
-    NASA. (2023). <em>120 Years Ago: The First Powered Flight at Kitty Hawk.</em> https://www.nasa.gov/history/120-years-ago-the-first-powered-flight-at-kitty-hawk/<br>
-    HP Tech Takes. (s.f.). <em>Computer History: All About the ENIAC.</em> https://www.hp.com/us-en/shop/tech-takes/computer-history-all-about-the-eniac<br>
-    National Geographic España. (s.f.). <em>La carrera espacial, paso a paso.</em> https://www.nationalgeographic.com.es/llegada-del-hombre-a-la-luna/carrera-espacial-paso-a-paso_14369<br>
-    National Geographic LA. (2024). <em>¿Cuál es el origen de Internet?</em> https://www.nationalgeographicla.com/historia/2024/05/cual-es-el-origen-de-internet<br>
+    National Geographic Historia. (2024). <em>Así se originó la escritura en la antigua Mesopotamia.</em> https://historia.nationalgeographic.com.es/a/asi-se-origino-escritura-antigua-mesopotamia_20605<br>
+    World History Encyclopedia. (2024). <em>Filosofía griega.</em> https://www.worldhistory.org/trans/es/1-11892/filosofia-griega/<br>
+    World History Encyclopedia. (2024). <em>Arquímedes.</em> https://www.worldhistory.org/trans/es/1-913/arquimedes/<br>
+    Historia de los Materiales — UBU. (s.f.). <em>El papel.</em> https://historiamateriales.ubuinvestiga.es/papel/<br>
+    Gordon-Conwell Theological Seminary. (s.f.). <em>Baghdad's House of Wisdom.</em> https://www.gordonconwell.edu/blog/baghdads-house-of-wisdom/<br>
+    National Geographic Historia. (2024). <em>Gutenberg: el inventor que cambió el mundo.</em> https://historia.nationalgeographic.com.es/a/gutenberg-inventor-que-cambio-mundo_11140<br>
+    National Geographic Historia. (2024). <em>Nicolás Copérnico y la revolución del cosmos.</em> https://historia.nationalgeographic.com.es/a/nicolas-copernico-y-revolucion-cosmos_13321<br>
+    World History Encyclopedia. (2024). <em>El telescopio y la revolución científica.</em> https://www.worldhistory.org/trans/es/2-2270/el-telescopio-y-la-revolucion-cientifica/<br>
+    National Geographic. (2024). <em>Principia Mathematica: el legado de Newton.</em> https://www.nationalgeographic.com.es/ciencia/principia-mathematica-legado-newton-divulgacion-cientifica_21675<br>
+    World History Encyclopedia. (2024). <em>La máquina de vapor de Watt.</em> https://www.worldhistory.org/trans/es/1-21774/la-maquina-de-vapor-de-watt/<br>
+    Britannica. (2024). <em>Electromagnetism.</em> https://www.britannica.com/science/electromagnetism/Foundations-of-electrochemistry-and-electrodynamics<br>
+    LibreTexts Español. (s.f.). <em>Rayos X y radiactividad.</em> https://espanol.libretexts.org/Bookshelves/Quimica/Qu%C3%ADmica_Introductoria%2C_Conceptual_y_GOB/Qu%C3%ADmica_para_Tiempos_Cambiantes_(Hill_y_McCreary)/03%3A_Estructura_at%C3%B3mica/3.02%3A_Serendipia_en_la_Ciencia_-_Rayos_X_y_Radiactividad<br>
+    NASA. (2023). <em>120 years ago: The first powered flight at Kitty Hawk.</em> https://www.nasa.gov/history/120-years-ago-the-first-powered-flight-at-kitty-hawk/<br>
+    HP Tech Takes. (s.f.). <em>Computer history: All about the ENIAC.</em> https://www.hp.com/us-en/shop/tech-takes/computer-history-all-about-the-eniac<br>
+    National Geographic. (2024). <em>La carrera espacial, paso a paso.</em> https://www.nationalgeographic.com.es/llegada-del-hombre-a-la-luna/carrera-espacial-paso-a-paso_14369<br>
+    National Geographic América Latina. (2024). <em>¿Cuál es el origen de Internet?</em> https://www.nationalgeographicla.com/historia/2024/05/cual-es-el-origen-de-internet<br>
     CERN. (s.f.). <em>A short history of the Web.</em> https://home.cern/science/computing/birth-web/short-history-web
   </p>
   <a class="back-top" href="#inicio">↑ Volver a la entrada</a>
 </footer>
-
 
 <!-- PANEL LATERAL -->
 <div class="exp-overlay" id="expOverlay">
@@ -628,7 +561,6 @@ body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text)
   </div>
 </div>
 
-
 <script>
 const DATA = {
   antigua: {
@@ -637,17 +569,17 @@ const DATA = {
     slides:[
       {src:'imagen/imagen1.jpg', year:'~3500 a.C.', title:'La rueda — Mesopotamia'},
       {src:'imagen/imagen2.jpg', year:'~3000 a.C.', title:'Escritura cuneiforme sumeria'},
-      {src:'imagen/imagen3.jpg', year:'~2560 a.C.', title:'Pirámides de Guiza'},
-      {src:'imagen/imagen4.jpg', year:'~300 a.C.',  title:'Biblioteca de Alejandría'},
+      {src:'imagen/imagen3.jpg', year:'~300 a.C.',  title:'Biblioteca de Alejandría'},
+      {src:'imagen/imagen4.jpg', year:'~250 a.C.',  title:'Arquímedes y la mecánica'},
     ],
     hitos:[
       { year:'~3500 a.C.', name:'Invención de la rueda', brief:'Mesopotamia — primer transporte sobre eje',
         ficha:[
           {label:'Lugar',value:'Mesopotamia (actual Irak)'},
           {label:'Área',value:'Ingeniería mecánica'},
-          {label:'Impacto',value:'Transporte, alfarería, mecanismos de transmisión'},
-          {label:'Investigación reciente',value:'Hallazgos desafían la cronología: tecnologías rotacionales podrían ser anteriores a los ~3500 a.C.',full:true},
-          {label:'Referencia',value:'National Geographic Historia. (2024). ¿Cuándo inventamos la rueda? https://historia.nationalgeographic.com.es/a/cuando-inventamos-rueda-este-hallazgo-desafia-que-creiamos_22588', full:true},
+          {label:'Impacto',value:'Transporte, alfarería, irrigación, construcción monumental'},
+          {label:'Dato reciente',value:'Hallazgos arqueológicos desafían la cronología establecida',full:true},
+          {label:'Referencia',value:'National Geographic Historia. (2024). ¿Cuándo inventamos la rueda?', full:true},
         ]},
       { year:'~3000 a.C.', name:'Escritura cuneiforme y jeroglíficos', brief:'Sumerios y egipcios — primer registro del saber',
         ficha:[
@@ -655,30 +587,30 @@ const DATA = {
           {label:'Soporte',value:'Tablillas de arcilla, papiro'},
           {label:'Área',value:'Tecnología comunicacional'},
           {label:'Impacto',value:'Acumulación y transmisión del saber entre generaciones',full:true},
-          {label:'Referencia',value:'National Geographic Historia. (s.f.). Así se originó la escritura en la antigua Mesopotamia. https://historia.nationalgeographic.com.es/a/asi-se-origino-escritura-antigua-mesopotamia_20605', full:true},
+          {label:'Referencia',value:'National Geographic Historia. (2024). Así se originó la escritura en Mesopotamia.', full:true},
         ]},
       { year:'~600 a.C.', name:'Filosofía natural griega', brief:'Tales, Pitágoras, Heráclito — razón sobre mito',
         ficha:[
           {label:'Figuras',value:'Tales, Pitágoras, Heráclito, Aristóteles'},
           {label:'Área',value:'Filosofía natural / Epistemología'},
-          {label:'Aporte',value:'Separación del conocimiento natural de la explicación mítica'},
+          {label:'Aporte',value:'Primer intento sistemático de comprender la naturaleza con principios racionales'},
           {label:'Legado',value:'Nacimiento del método científico occidental',full:true},
-          {label:'Referencia',value:'Mark, J. J. (2020). Filosofía griega. World History Encyclopedia. https://www.worldhistory.org/trans/es/1-11892/filosofia-griega/', full:true},
+          {label:'Referencia',value:'World History Encyclopedia. (2024). Filosofía griega.', full:true},
         ]},
-      { year:'~300 a.C.', name:'Arquímedes y Biblioteca de Alejandría', brief:'Euclides y Arquímedes — primer centro de investigación',
+      { year:'~300–250 a.C.', name:'Alejandría: Euclides y Arquímedes', brief:'Primer centro de investigación de la humanidad',
         ficha:[
           {label:'Lugar',value:'Alejandría, Egipto'},
           {label:'Figuras',value:'Euclides, Arquímedes, Eratóstenes'},
           {label:'Área',value:'Matemática, mecánica, hidrostática'},
-          {label:'Legado',value:'Los Elementos de Euclides; principios de palanca, flotabilidad y tornillo hidráulico',full:true},
-          {label:'Referencia',value:'Mark, J. J. (2024). Arquímedes. World History Encyclopedia. https://www.worldhistory.org/trans/es/1-913/arquimedes/', full:true},
+          {label:'Legado',value:'Los Elementos de Euclides: referencia por más de 2000 años',full:true},
+          {label:'Referencia',value:'World History Encyclopedia. (2024). Arquímedes. — Kuhn (2004).', full:true},
         ]},
     ],
     biblio:[
-      {ref:'National Geographic Historia. (2024). <em>¿Cuándo inventamos la rueda? Este hallazgo desafía lo que creíamos.</em>',note:'Analiza investigaciones recientes sobre los orígenes de las tecnologías rotacionales en la prehistoria.'},
-      {ref:'National Geographic Historia. (s.f.). <em>Así se originó la escritura en la antigua Mesopotamia.</em>',note:'Recorrido por el surgimiento de la escritura cuneiforme en Uruk y su significado cultural.'},
-      {ref:'Mark, J. J. (2020). <em>Filosofía griega.</em> World History Encyclopedia.',note:'Marco sobre el desarrollo del pensamiento científico occidental desde los presocráticos.'},
-      {ref:'Mark, J. J. (2024). <em>Arquímedes.</em> World History Encyclopedia.',note:'Biografía y aportes del mayor matemático de la Antigüedad, incluyendo sus principios mecánicos e hidráulicos.'},
+      {ref:'National Geographic Historia. (2024). <em>¿Cuándo inventamos la rueda?</em>',note:'Hallazgos recientes sobre el origen y evolución de la rueda en Mesopotamia.'},
+      {ref:'National Geographic Historia. (2024). <em>Así se originó la escritura en la antigua Mesopotamia.</em>',note:'Origen y función social de la escritura cuneiforme sumeria.'},
+      {ref:'World History Encyclopedia. (2024). <em>Filosofía griega.</em>',note:'La filosofía griega como primer intento sistemático de comprender la naturaleza mediante la razón.'},
+      {ref:'World History Encyclopedia. (2024). <em>Arquímedes.</em>',note:'Vida, principios y aplicaciones prácticas del pensamiento de Arquímedes.'},
     ],
   },
 
@@ -688,38 +620,38 @@ const DATA = {
     slides:[
       {src:'imagen/imagen5.jpg',  year:'~105 d.C.', title:'Cai Lun — inventor del papel'},
       {src:'imagen/imagen6.jpg',  year:'~830 d.C.', title:'Casa de la Sabiduría, Bagdad'},
-      {src:'imagen/imagen7.jpg', year:'1440',      title:'La imprenta de Gutenberg'},
+      {src:'imagen/imagen7.jpg',  year:'1440',      title:'La imprenta de Gutenberg'},
     ],
     hitos:[
       { year:'~105 d.C.', name:'Invención del papel', brief:'Cai Lun, China — soporte del conocimiento',
         ficha:[
           {label:'Inventor',value:'Cai Lun (dinastía Han, China)'},
           {label:'Material',value:'Fibras vegetales, corteza, trapos'},
-          {label:'Llegada a Europa',value:'~Siglo X, vía mundo árabe'},
-          {label:'Datos',value:'Primer documento europeo en papel: Misal de Silos, anterior a 1036',full:true},
-          {label:'Referencia',value:'Santos y Ganges, L., & Serna Serna, S. (s.f.). Historia y evolución del papel. Univ. de Burgos / UBUinvestiga. https://historiamateriales.ubuinvestiga.es/papel/', full:true},
+          {label:'Secreto',value:'El proceso se mantuvo en secreto durante siglos'},
+          {label:'Llegada a Europa',value:'~Siglo X, vía mundo árabe',full:true},
+          {label:'Referencia',value:'Historia de los Materiales — UBU. (s.f.). El papel.', full:true},
         ]},
-      { year:'~830 d.C.', name:'Casa de la Sabiduría', brief:'Bagdad — centro intelectual del mundo medieval',
+      { year:'~830 d.C.', name:'Casa de la Sabiduría', brief:'Bagdad — proyecto de alcance civilizatorio',
         ficha:[
           {label:'Lugar',value:'Bagdad (califato abasí)'},
           {label:'Período',value:'~830–1258 d.C.'},
           {label:'Figura clave',value:'Al-Juarismi (~780–850 d.C.)'},
-          {label:'Aporte',value:'Álgebra (al-jabr) y el concepto de algoritmo. Traducciones del griego, persa e indio al árabe.',full:true},
-          {label:'Referencia',value:'Johnson, T. M. (2023). Baghdad\'s House of Wisdom. Gordon Conwell. https://www.gordonconwell.edu/blog/baghdads-house-of-wisdom/', full:true},
+          {label:'Aporte',value:'Álgebra (al-jabr) y el concepto de algoritmo',full:true},
+          {label:'Referencia',value:'Gordon-Conwell Theological Seminary. (s.f.). Baghdad\'s House of Wisdom.', full:true},
         ]},
       { year:'1440', name:'Imprenta de Gutenberg', brief:'Maguncia — reproducción masiva del conocimiento',
         ficha:[
           {label:'Inventor',value:'Johannes Gutenberg (~1400–1468)'},
           {label:'Lugar',value:'Maguncia, Alemania'},
           {label:'Primera obra',value:'Biblia de Gutenberg (~1455)'},
-          {label:'Impacto',value:'Miles a millones de libros en pocas décadas. Condición para la Revolución Científica.',full:true},
-          {label:'Referencia',value:'National Geographic Historia. (s.f.). Gutenberg, el inventor que cambió el mundo. https://historia.nationalgeographic.com.es/a/gutenberg-inventor-que-cambio-mundo_11140', full:true},
+          {label:'Impacto',value:'Miles a millones de libros. Condición para la Revolución Científica.',full:true},
+          {label:'Referencia',value:'National Geographic Historia. (2024). Gutenberg: el inventor que cambió el mundo.', full:true},
         ]},
     ],
     biblio:[
-      {ref:'Santos y Ganges, L., & Serna Serna, S. (s.f.). <em>Historia y evolución del papel.</em> Universidad de Burgos / UBUinvestiga.',note:'Documenta la llegada del papel a Europa y su impacto en la transmisión del conocimiento.'},
-      {ref:'Johnson, T. M. (2023). <em>Baghdad\'s House of Wisdom.</em> Gordon Conwell.',note:'Describe la Casa de la Sabiduría como centro de traducción y desarrollo intelectual del mundo islámico medieval.'},
-      {ref:'National Geographic Historia. (s.f.). <em>Gutenberg, el inventor que cambió el mundo.</em>',note:'Recorre la vida e invención de Gutenberg y el impacto de la imprenta en la difusión del saber.'},
+      {ref:'Historia de los Materiales — UBU. (s.f.). <em>El papel.</em>',note:'Proceso de fabricación y difusión del papel desde China hasta Europa.'},
+      {ref:'Gordon-Conwell Theological Seminary. (s.f.). <em>Baghdad\'s House of Wisdom.</em>',note:'La Casa de la Sabiduría como proyecto de transferencia cultural y generación de conocimiento.'},
+      {ref:'National Geographic Historia. (2024). <em>Gutenberg: el inventor que cambió el mundo.</em>',note:'La imprenta como innovación que democratizó el conocimiento y transformó la sociedad europea.'},
     ],
   },
 
@@ -727,8 +659,8 @@ const DATA = {
     tag:'Sala III', title:'La Era Moderna', period:'1543 — 1700', accent:'#3A7DB5',
     salaInfo:'Los siglos XVI y XVII presenciaron la Revolución Científica, que estableció el método experimental como base del conocimiento y sentó los cimientos matemáticos sobre los que se construiría toda la tecnología moderna.',
     slides:[
-      {src:'imagen/imagen8.jpg', year:'1543',    title:'Nicolás Copérnico'},
-      {src:'imagen/imagen9.jpg', year:'1609–10', title:'Telescopios originales de Galileo'},
+      {src:'imagen/imagen8.jpg',  year:'1543',    title:'Nicolás Copérnico'},
+      {src:'imagen/imagen9.jpg',  year:'1609–10', title:'Galileo y su telescopio'},
       {src:'imagen/imagen10.jpg', year:'1687',    title:'Portada Principia Mathematica'},
     ],
     hitos:[
@@ -736,38 +668,38 @@ const DATA = {
         ficha:[
           {label:'Figura',value:'Nicolás Copérnico (1473–1543)'},
           {label:'Obra',value:'De revolutionibus orbium coelestium'},
-          {label:'Área',value:'Astronomía / Epistemología'},
-          {label:'Impacto',value:'Desplazó a la Tierra del centro del universo. Base para Galileo, Kepler y Newton.',full:true},
-          {label:'Referencia',value:'National Geographic Historia. (s.f.). Nicolás Copérnico y la revolución del cosmos. https://historia.nationalgeographic.com.es/a/nicolas-copernico-y-revolucion-cosmos_13321', full:true},
+          {label:'Dato',value:'Tardó décadas en publicar, consciente del impacto en la doctrina de la época'},
+          {label:'Impacto',value:'Primer cambio de paradigma de la ciencia moderna (Kuhn, 2004)',full:true},
+          {label:'Referencia',value:'National Geographic Historia. (2024). Nicolás Copérnico y la revolución del cosmos.', full:true},
         ]},
-      { year:'1609', name:'Telescopio y física experimental — Galileo', brief:'Observación + matemática = ciencia moderna',
+      { year:'1609', name:'Telescopio y física experimental — Galileo', brief:'El ojo humano asistido por tecnología',
         ficha:[
           {label:'Figura',value:'Galileo Galilei (1564–1642)'},
-          {label:'Instrumento',value:'Telescopio refractor (hasta 33x de aumento)'},
+          {label:'Instrumento',value:'Telescopio refractor mejorado'},
           {label:'Observaciones',value:'Lunas de Júpiter, fases de Venus, cráteres lunares'},
           {label:'Método',value:'Experimento controlado + razonamiento matemático',full:true},
-          {label:'Referencia',value:'World History Encyclopedia. (2023). El telescopio y la Revolución Científica. https://www.worldhistory.org/trans/es/2-2270/el-telescopio-y-la-revolucion-cientifica/', full:true},
+          {label:'Referencia',value:'World History Encyclopedia. (2024). El telescopio y la revolución científica.', full:true},
         ]},
       { year:'1687', name:'Principia Mathematica — Newton', brief:'Paradigma dominante por más de 200 años',
         ficha:[
           {label:'Figura',value:'Isaac Newton (1643–1727)'},
           {label:'Obra',value:'Philosophiæ Naturalis Principia Mathematica'},
           {label:'Área',value:'Mecánica, gravitación, cálculo diferencial'},
-          {label:'Legado',value:'Unificó mecánica terrestre y astronomía celeste. Paradigma dominante por más de 200 años.',full:true},
-          {label:'Referencia',value:'National Geographic. (2024). "Principia Mathematica": el legado de Newton. https://www.nationalgeographic.com.es/ciencia/principia-mathematica-legado-newton-divulgacion-cientifica_21675', full:true},
+          {label:'Legado',value:'Base del cálculo, la ingeniería moderna y la astronomía (Kuhn, 2004)',full:true},
+          {label:'Referencia',value:'National Geographic. (2024). Principia Mathematica: el legado de Newton.', full:true},
         ]},
     ],
     biblio:[
-      {ref:'National Geographic Historia. (s.f.). <em>Nicolás Copérnico y la revolución del cosmos.</em>',note:'Recorre la vida de Copérnico y el impacto de su modelo heliocéntrico en el pensamiento científico.'},
-      {ref:'World History Encyclopedia. (2023). <em>El telescopio y la Revolución Científica.</em>',note:'Contextualiza el telescopio de Galileo en el marco de la Revolución Científica del siglo XVII.'},
-      {ref:'National Geographic. (2024). <em>"Principia Mathematica": el legado de Newton en la divulgación científica.</em>',note:'Analiza el contenido, estructura y legado de la obra cumbre de Newton.'},
-      {ref:'Kuhn, T. S. (2004). <em>La estructura de las revoluciones científicas.</em> Fondo de Cultura Económica.',note:'Marco conceptual esencial para entender la Revolución Científica: paradigmas, anomalías y rupturas.'},
+      {ref:'National Geographic Historia. (2024). <em>Nicolás Copérnico y la revolución del cosmos.</em>',note:'El contexto histórico y el impacto del modelo heliocéntrico en la ciencia y la doctrina de la época.'},
+      {ref:'World History Encyclopedia. (2024). <em>El telescopio y la revolución científica.</em>',note:'El telescopio como instrumento que amplió los límites del conocimiento humano.'},
+      {ref:'National Geographic. (2024). <em>Principia Mathematica: el legado de Newton.</em>',note:'El alcance científico y tecnológico del trabajo de Newton.'},
+      {ref:'Kuhn, T. S. (2004). <em>La estructura de las revoluciones científicas.</em> Fondo de Cultura Económica.',note:'Marco conceptual sobre paradigmas científicos: Copérnico como primer cambio de paradigma moderno.'},
     ],
   },
 
   industrial: {
     tag:'Sala IV', title:'Revolución Industrial', period:'1769 — 1910', accent:'#7B6FBB',
-    salaInfo:'La Revolución Industrial fue el momento en que la ciencia y la tecnología se fusionaron definitivamente. Por primera vez, la producción de bienes dejó de depender del trabajo humano y animal, inaugurando la era de la aceleración tecnológica.',
+    salaInfo:'La Revolución Industrial fue el momento en que la ciencia y la tecnología se fusionaron definitivamente. Por primera vez, la producción dejó de depender del trabajo humano y animal, inaugurando la era de la aceleración tecnológica.',
     slides:[
       {src:'imagen/imagen11.jpg', year:'1784',         title:'Máquina de vapor Boulton & Watt'},
       {src:'imagen/imagen12.jpg', year:'1829',         title:'La Rocket — primera locomotora'},
@@ -776,58 +708,59 @@ const DATA = {
       {src:'imagen/imagen15.jpg', year:'17 dic. 1903', title:'Primer vuelo — Hermanos Wright'},
     ],
     hitos:[
-      { year:'1769', name:'Máquina de vapor — James Watt', brief:'Termodinámica aplicada — inicio de la industria',
+      { year:'1769', name:'Máquina de vapor — James Watt', brief:'Ingeniero e industria: un vínculo que cambió el mundo',
         ficha:[
           {label:'Figura',value:'James Watt (1736–1819)'},
           {label:'Año de la patente',value:'1769'},
           {label:'Mejora clave',value:'Condensador separado + movimiento rotativo'},
-          {label:'Escala',value:'Watt y Boulton fabricaron y vendieron casi 500 máquinas antes de 1800.',full:true},
-          {label:'Referencia',value:'Cartwright, M. (2023). La máquina de vapor de Watt. World History Encyclopedia. https://www.worldhistory.org/trans/es/1-21774/la-maquina-de-vapor-de-watt/', full:true},
+          {label:'Colaboración',value:'Trabajó con Matthew Boulton — primer modelo ingeniero-empresa'},
+          {label:'Referencia',value:'World History Encyclopedia. (2024). La máquina de vapor de Watt.', full:true},
         ]},
       { year:'1820–1831', name:'Electromagnetismo', brief:'Ørsted, Ampère y Faraday — base de la electricidad',
         ficha:[
           {label:'Figuras',value:'Ørsted, Ampère, Faraday, Maxwell'},
           {label:'Período',value:'1820–1873'},
           {label:'Área',value:'Electromagnetismo aplicado'},
-          {label:'Aplicaciones',value:'Motor eléctrico, generador, transformador. Base de toda la infraestructura eléctrica moderna.',full:true},
-          {label:'Referencia',value:'Encyclopædia Britannica. (s.f.). Electromagnetism: Foundations. https://www.britannica.com/science/electromagnetism/Foundations-of-electrochemistry-and-electrodynamics', full:true},
+          {label:'Aplicaciones',value:'Motor eléctrico, generador, transformador',full:true},
+          {label:'Referencia',value:'Britannica. (2024). Electromagnetism.', full:true},
         ]},
-      { year:'1876', name:'El teléfono — debate histórico', brief:'Bell (patente 1876) — disputa con Meucci y Gray',
+      { year:'1876', name:'El teléfono — Bell', brief:'Comunicación a distancia en tiempo real',
         ficha:[
-          {label:'Patente',value:'Alexander Graham Bell (1847–1922), 7 de marzo de 1876'},
-          {label:'Debate',value:'Antonio Meucci (predecesor); Elisha Gray (caveat el mismo día). Congreso EE.UU. reconoció a Meucci en 2002.'},
-          {label:'Área',value:'Telecomunicaciones'},
-          {label:'Impacto',value:'Primera transmisión de voz humana a distancia. Transformación de las comunicaciones globales.',full:true},
-          {label:'Referencia',value:'Encyclopædia Britannica. (s.f.). Electromagnetism: Foundations. https://www.britannica.com/science/electromagnetism/Foundations-of-electrochemistry-and-electrodynamics', full:true},
+          {label:'Figura',value:'Alexander Graham Bell (1847–1922)'},
+          {label:'Año',value:'1876 (patente)'},
+          {label:'Dato',value:'Elisha Gray presentó su patente el mismo día — el progreso es frecuentemente paralelo'},
+          {label:'Área',value:'Telecomunicaciones',full:true},
+          {label:'Referencia',value:'Telefónica. (2024). 9 inventos tecnológicos que han cambiado el mundo.', full:true},
         ]},
-      { year:'1895', name:'Rayos X y radiactividad', brief:'Röntgen y Curie — serendipia en la física',
+      { year:'1895', name:'Rayos X y radiactividad', brief:'Röntgen y Curie — anomalías que abren nuevos campos',
         ficha:[
           {label:'Figuras',value:'Wilhelm Röntgen, Marie Curie'},
           {label:'Año',value:'1895 (rayos X), 1898 (radiactividad)'},
-          {label:'Área',value:'Física, medicina diagnóstica'},
-          {label:'Impacto',value:'Diagnóstico médico por imágenes. Apertura hacia la física nuclear. Ejemplos de serendipia científica.',full:true},
-          {label:'Referencia',value:'LibreTexts Química. (s.f.). Serendipia en la Ciencia: Rayos X y Radiactividad. https://espanol.libretexts.org/...', full:true},
+          {label:'Dato',value:'Curie acuñó el término "radiactividad" y fue la primera en ganar dos Nobel'},
+          {label:'Área',value:'Física, medicina diagnóstica, física nuclear',full:true},
+          {label:'Referencia',value:'LibreTexts Español. (s.f.). Rayos X y radiactividad.', full:true},
         ]},
-      { year:'1903', name:'Primer vuelo motorizado — Wright', brief:'Kitty Hawk — cuatro vuelos que cambiaron el mundo',
+      { year:'1903', name:'Primer vuelo motorizado — Wright', brief:'Kitty Hawk — ingeniería sin ciencia académica',
         ficha:[
           {label:'Figuras',value:'Orville y Wilbur Wright'},
           {label:'Fecha',value:'17 de diciembre de 1903'},
-          {label:'Lugar',value:'Kitty Hawk, Carolina del Norte'},
-          {label:'Vuelos del día',value:'4 vuelos en total; el último: 59 segundos · 260 metros'},
-          {label:'Referencia',value:'NASA. (2023). 120 Years Ago: The First Powered Flight at Kitty Hawk. https://www.nasa.gov/history/120-years-ago-the-first-powered-flight-at-kitty-hawk/', full:true},
+          {label:'Dato',value:'Eran mecánicos de bicicletas — el logro fue por experimentación sistemática'},
+          {label:'Duración / distancia',value:'12 segundos · 36 metros',full:true},
+          {label:'Referencia',value:'NASA. (2023). 120 years ago: The first powered flight at Kitty Hawk.', full:true},
         ]},
     ],
     biblio:[
-      {ref:'Cartwright, M. (2023). <em>La máquina de vapor de Watt.</em> World History Encyclopedia.',note:'Contextualiza la máquina de Watt como catalizador de la Revolución Industrial y el cambio de sociedad agraria a industrial.'},
-      {ref:'Encyclopædia Britannica. (s.f.). <em>Electromagnetism: Foundations of electrochemistry and electrodynamics.</em>',note:'Desarrolla el encadenamiento científico desde Ørsted y Ampère hasta Faraday, base de toda la tecnología eléctrica moderna.'},
-      {ref:'LibreTexts Química. (s.f.). <em>Serendipia en la Ciencia: Rayos X y Radiactividad.</em>',note:'Describe los descubrimientos de Röntgen y Curie como ejemplos paradigmáticos de hallazgos inesperados en la ciencia.'},
-      {ref:'NASA. (2023). <em>120 Years Ago: The First Powered Flight at Kitty Hawk.</em>',note:'Documentación oficial de la NASA sobre los cuatro vuelos del 17 de diciembre de 1903 y su significado histórico.'},
+      {ref:'World History Encyclopedia. (2024). <em>La máquina de vapor de Watt.</em>',note:'La colaboración Watt-Boulton como modelo de vinculación entre ingeniero e industria.'},
+      {ref:'Britannica. (2024). <em>Electromagnetism.</em>',note:'El desarrollo acumulativo del electromagnetismo como patrón del progreso científico moderno.'},
+      {ref:'Telefónica. (2024). <em>9 inventos tecnológicos que han cambiado el mundo.</em>',note:'El teléfono y otros inventos del siglo XIX como motores del desarrollo socioeconómico.'},
+      {ref:'LibreTexts Español. (s.f.). <em>Rayos X y radiactividad.</em>',note:'El descubrimiento accidental de los rayos X y la contribución de Marie Curie a la física nuclear.'},
+      {ref:'NASA. (2023). <em>120 years ago: The first powered flight at Kitty Hawk.</em>',note:'El primer vuelo motorizado como ejemplo de ingeniería aplicada sin base académica formal.'},
     ],
   },
 
   digital: {
     tag:'Sala V', title:'La Era Digital', period:'1945 — presente', accent:'#C85A3A',
-    salaInfo:'La segunda mitad del siglo XX y los inicios del XXI han sido testigos de la transformación tecnológica más acelerada de la historia humana. La computadora, Internet y la IA han reconfigurado radicalmente la forma en que la humanidad produce, comunica y organiza el conocimiento.',
+    salaInfo:'La segunda mitad del siglo XX y los inicios del XXI han sido testigos de la transformación tecnológica más acelerada. La computadora, Internet y la IA han reconfigurado radicalmente la forma en que la humanidad produce, comunica y organiza el conocimiento.',
     slides:[
       {src:'imagen/imagen16.jpg', year:'1945',    title:'ENIAC — primera computadora electrónica'},
       {src:'imagen/imagen17.jpg', year:'1957',    title:'Sputnik — inicio de la era espacial'},
@@ -836,58 +769,58 @@ const DATA = {
       {src:'imagen/imagen20.jpg', year:'2022–hoy',title:'Inteligencia Artificial Generativa'},
     ],
     hitos:[
-      { year:'1945', name:'ENIAC — primera computadora electrónica', brief:'Universidad de Pensilvania — inicio de la informática',
+      { year:'1945', name:'ENIAC — primera computadora electrónica', brief:'Diseñada para calcular tablas de artillería',
         ficha:[
           {label:'Institución',value:'Universidad de Pensilvania'},
           {label:'Dimensiones',value:'167 m² · 27 toneladas · 18.000 tubos de vacío'},
           {label:'Velocidad',value:'5.000 sumas por segundo · 150 kW'},
-          {label:'Legado',value:'Diseñada para cálculos balísticos; su programación flexible la hizo el primer computador de propósito general.',full:true},
-          {label:'Referencia',value:'HP Tech Takes. (s.f.). Computer History: All About the ENIAC. https://www.hp.com/us-en/shop/tech-takes/computer-history-all-about-the-eniac', full:true},
+          {label:'Dato',value:'Fue diseñada originalmente para calcular tablas de tiro de artillería',full:true},
+          {label:'Referencia',value:'HP Tech Takes. (s.f.). Computer history: All about the ENIAC.', full:true},
         ]},
-      { year:'1957', name:'Sputnik — era espacial', brief:'URSS — primer satélite artificial',
+      { year:'1957', name:'Sputnik — era espacial', brief:'Pánico, admiración e inversión en ciencia',
         ficha:[
           {label:'Hito',value:'Sputnik 1 — primer satélite artificial'},
           {label:'País',value:'URSS'},
           {label:'Fecha',value:'4 de octubre de 1957'},
-          {label:'Impacto',value:'Carrera espacial. Inversiones en electrónica trasladadas a la sociedad civil. Base de la revolución digital.',full:true},
-          {label:'Referencia',value:'National Geographic España. (s.f.). La carrera espacial, paso a paso. https://www.nationalgeographic.com.es/llegada-del-hombre-a-la-luna/carrera-espacial-paso-a-paso_14369', full:true},
+          {label:'Impacto',value:'Provocó pánico en Occidente e impulsó enormes inversiones en educación científica',full:true},
+          {label:'Referencia',value:'National Geographic. (2024). La carrera espacial, paso a paso.', full:true},
         ]},
-      { year:'1969', name:'ARPANET — origen de Internet', brief:'DARPA — red distribuida sin punto central de fallo',
+      { year:'1969', name:'ARPANET — origen de Internet', brief:'El primer mensaje fue solo "lo"',
         ficha:[
           {label:'Promotor',value:'DARPA (Departamento de Defensa, EE.UU.)'},
           {label:'Primer nodo',value:'UCLA, Stanford, UCSB, Utah'},
-          {label:'Primer mensaje',value:'Conectó UCLA con Stanford; el sistema se cayó tras las dos primeras letras ("lo")'},
-          {label:'Legado',value:'La arquitectura de red distribuida define Internet hasta hoy.',full:true},
-          {label:'Referencia',value:'National Geographic LA. (2024). ¿Cuál es el origen de Internet? https://www.nationalgeographicla.com/historia/2024/05/cual-es-el-origen-de-internet', full:true},
+          {label:'Dato',value:'El primer mensaje enviado fue "lo" (de "login") antes de que el sistema colapsara'},
+          {label:'Principio',value:'Red distribuida sin punto central de fallo',full:true},
+          {label:'Referencia',value:'National Geographic América Latina. (2024). ¿Cuál es el origen de Internet?', full:true},
         ]},
-      { year:'1991', name:'World Wide Web — Berners-Lee', brief:'CERN — Internet accesible para todos',
+      { year:'1991', name:'World Wide Web — Berners-Lee', brief:'Gratuita y libre por decisión de su creador',
         ficha:[
           {label:'Figura',value:'Tim Berners-Lee (1955–)'},
           {label:'Institución',value:'CERN, Ginebra'},
-          {label:'Propuesta original',value:'1989 (para compartir datos entre científicos del CERN)'},
-          {label:'Distinción clave',value:'Web ≠ Internet. La Web es el sistema de páginas hipertextuales que corre sobre Internet.',full:true},
-          {label:'Referencia',value:'CERN. (s.f.). A short history of the Web. https://home.cern/science/computing/birth-web/short-history-web', full:true},
+          {label:'Dato',value:'Rechazó patentar su invento para que pudiera crecer libremente'},
+          {label:'Distinción clave',value:'Web ≠ Internet. La Web es el sistema de páginas que corre sobre Internet.',full:true},
+          {label:'Referencia',value:'CERN. (s.f.). A short history of the Web.', full:true},
         ]},
-      { year:'2000s – hoy', name:'Redes sociales e IA generativa', brief:'Machine learning, deep learning y cambio de paradigma',
+      { year:'2000s – hoy', name:'Redes sociales e IA generativa', brief:'Cambio de paradigma tecnológico (Kuhn, 2004)',
         ficha:[
           {label:'Hitos',value:'ChatGPT (2022), modelos multimodales (2023–)'},
           {label:'Área',value:'IA generativa · Ingeniería de sistemas'},
-          {label:'Marco teórico',value:'Cambio de paradigma tecnológico (Kuhn, 2004)'},
+          {label:'Marco teórico',value:'Cambio de paradigma tecnológico en el sentido de Kuhn (2004)'},
           {label:'Desafío central',value:'Responsabilidad ética frente al impacto social de la IA',full:true},
-          {label:'Referencia',value:'Vivelibre. (2024). Evolución de la tecnología. — Kuhn, T. S. (2004). La estructura de las revoluciones científicas.', full:true},
+          {label:'Referencia',value:'Vivelibre (2024); Kuhn, T. S. (2004); Concepto.de (2020).', full:true},
         ]},
     ],
     biblio:[
-      {ref:'HP Tech Takes. (s.f.). <em>Computer History: All About the ENIAC.</em>',note:'Documenta el origen y características de la ENIAC como primera computadora electrónica de propósito general.'},
-      {ref:'National Geographic España. (s.f.). <em>La carrera espacial, paso a paso.</em>',note:'Recorre los hitos de la carrera espacial desde el Sputnik y su impacto en la tecnología civil.'},
-      {ref:'National Geographic LA. (2024). <em>¿Cuál es el origen de Internet?</em>',note:'Explica el surgimiento de ARPANET y el desarrollo de Internet hasta la actualidad.'},
-      {ref:'CERN. (s.f.). <em>A short history of the Web.</em>',note:'Fuente primaria del CERN sobre el origen y desarrollo de la World Wide Web por Tim Berners-Lee.'},
-      {ref:'Kuhn, T. S. (2004). <em>La estructura de las revoluciones científicas.</em> Fondo de Cultura Económica.',note:'La IA generativa como cambio de paradigma tecnológico en el sentido kuhniano.'},
+      {ref:'HP Tech Takes. (s.f.). <em>Computer history: All about the ENIAC.</em>',note:'Historia y características técnicas de la ENIAC como primera computadora electrónica.'},
+      {ref:'National Geographic. (2024). <em>La carrera espacial, paso a paso.</em>',note:'El Sputnik y la carrera espacial como motor de inversión en ciencia y tecnología.'},
+      {ref:'National Geographic América Latina. (2024). <em>¿Cuál es el origen de Internet?</em>',note:'El origen de ARPANET y el primer mensaje enviado a través de la red.'},
+      {ref:'CERN. (s.f.). <em>A short history of the Web.</em>',note:'La decisión de Berners-Lee de no patentar la Web y su impacto en la democratización del conocimiento.'},
+      {ref:'Vivelibre. (2024). <em>Evolución de la tecnología.</em>',note:'La IA y el IoT como hitos de la aceleración tecnológica del siglo XXI.'},
+      {ref:'Kuhn, T. S. (2004). <em>La estructura de las revoluciones científicas.</em> Fondo de Cultura Económica.',note:'La IA generativa como cambio de paradigma en el sentido kuhniano.'},
     ],
   },
 };
 
-/* ════════════ LÓGICA ════════════ */
 const overlay=document.getElementById('expOverlay');
 const backdrop=document.getElementById('expBackdrop');
 const epTag=document.getElementById('epTag');
@@ -903,7 +836,6 @@ const epTabs=document.getElementById('epTabs');
 const tabHitos=document.getElementById('tab-hitos');
 const tabSala=document.getElementById('tab-sala');
 const tabBiblio=document.getElementById('tab-biblio');
-
 let cur=null, idx=0, timer=null, activeHito=-1;
 const DUR=5500;
 
@@ -917,14 +849,9 @@ function openExhibit(key){
   overlay.classList.add('active'); document.body.style.overflow='hidden';
   startAuto();
 }
-
-function closeExhibit(){
-  overlay.classList.remove('active'); document.body.style.overflow=''; stopAuto();
-}
-
+function closeExhibit(){ overlay.classList.remove('active'); document.body.style.overflow=''; stopAuto(); }
 function buildSlides(){
-  epSlide.querySelectorAll('.slide').forEach(s=>s.remove());
-  epDots.innerHTML='';
+  epSlide.querySelectorAll('.slide').forEach(s=>s.remove()); epDots.innerHTML='';
   cur.slides.forEach((s,i)=>{
     const el=document.createElement('div'); el.className='slide'+(i===0?' active':'');
     const img=document.createElement('img'); img.src=s.src; img.alt=s.title;
@@ -936,119 +863,49 @@ function buildSlides(){
     d.onclick=()=>goSlide(i); epDots.appendChild(d);
   });
 }
-
 function buildHitos(){
   tabHitos.innerHTML='';
   const list=document.createElement('div'); list.className='hito-list';
   cur.hitos.forEach((h,i)=>{
     const item=document.createElement('div'); item.className='hito-item'; item.id=`hi-${i}`;
-    item.innerHTML=`
-      <div class="hito-left"><div class="hito-year-tag">${h.year}</div></div>
-      <div class="hito-right">
-        <div class="hito-name">${h.name}</div>
-        <div class="hito-brief">${h.brief}</div>
-      </div>
-      <div class="hito-arrow">▶</div>`;
-    item.addEventListener('click',()=>toggleHito(i));
-    list.appendChild(item);
+    item.innerHTML=`<div class="hito-left"><div class="hito-year-tag">${h.year}</div></div><div class="hito-right"><div class="hito-name">${h.name}</div><div class="hito-brief">${h.brief}</div></div><div class="hito-arrow">▶</div>`;
+    item.addEventListener('click',()=>toggleHito(i)); list.appendChild(item);
     const fichaEl=document.createElement('div'); fichaEl.className='hito-ficha'; fichaEl.id=`hf-${i}`;
     const fichaGrid=document.createElement('div'); fichaGrid.className='ficha-grid';
-    h.ficha.forEach(f=>{
-      const cell=document.createElement('div'); cell.className='ficha-cell'+(f.full?' full':'');
-      cell.innerHTML=`<div class="ficha-cell-label">${f.label}</div><div class="ficha-cell-value">${f.value}</div>`;
-      fichaGrid.appendChild(cell);
-    });
-    fichaEl.appendChild(fichaGrid);
-    list.appendChild(fichaEl);
+    h.ficha.forEach(f=>{ const cell=document.createElement('div'); cell.className='ficha-cell'+(f.full?' full':''); cell.innerHTML=`<div class="ficha-cell-label">${f.label}</div><div class="ficha-cell-value">${f.value}</div>`; fichaGrid.appendChild(cell); });
+    fichaEl.appendChild(fichaGrid); list.appendChild(fichaEl);
   });
   tabHitos.appendChild(list);
 }
-
 function toggleHito(i){
-  const item=document.getElementById(`hi-${i}`);
-  const ficha=document.getElementById(`hf-${i}`);
-  const wasActive=activeHito===i;
+  const item=document.getElementById(`hi-${i}`), ficha=document.getElementById(`hf-${i}`), was=activeHito===i;
   document.querySelectorAll('.hito-item').forEach(el=>el.classList.remove('active'));
   document.querySelectorAll('.hito-ficha').forEach(el=>el.classList.remove('active'));
   activeHito=-1;
-  if(!wasActive){
-    item.classList.add('active'); ficha.classList.add('active'); activeHito=i;
-    goSlide(Math.min(i,cur.slides.length-1));
-  }
+  if(!was){ item.classList.add('active'); ficha.classList.add('active'); activeHito=i; goSlide(Math.min(i,cur.slides.length-1)); }
 }
-
 function buildSalaInfo(){
-  tabSala.innerHTML=`
-    <div class="sala-info-block">
-      <div class="sala-info-label">Sobre esta sala</div>
-      <div class="sala-info-text">${cur.salaInfo}</div>
-    </div>
-    <div class="sala-info-divider"></div>
-    <div class="sala-info-block">
-      <div class="sala-info-label">Período</div>
-      <div class="sala-info-text">${cur.period}</div>
-    </div>
-    <div class="sala-info-divider"></div>
-    <div class="sala-info-block">
-      <div class="sala-info-label">Hitos en esta sala</div>
-      <div class="sala-info-text">${cur.hitos.map(h=>`<strong>${h.year}</strong> — ${h.name}`).join('<br>')}</div>
-    </div>`;
+  tabSala.innerHTML=`<div class="sala-info-block"><div class="sala-info-label">Sobre esta sala</div><div class="sala-info-text">${cur.salaInfo}</div></div><div class="sala-info-divider"></div><div class="sala-info-block"><div class="sala-info-label">Período</div><div class="sala-info-text">${cur.period}</div></div><div class="sala-info-divider"></div><div class="sala-info-block"><div class="sala-info-label">Hitos en esta sala</div><div class="sala-info-text">${cur.hitos.map(h=>`<strong>${h.year}</strong> — ${h.name}`).join('<br>')}</div></div>`;
 }
-
-function buildBiblio(){
-  tabBiblio.innerHTML=cur.biblio.map(b=>`<div class="exp-biblio"><strong>Fuente:</strong> ${b.ref}<span>${b.note}</span></div>`).join('');
-}
-
+function buildBiblio(){ tabBiblio.innerHTML=cur.biblio.map(b=>`<div class="exp-biblio"><strong>Fuente:</strong> ${b.ref}<span>${b.note}</span></div>`).join(''); }
 function goSlide(i){
-  const slides=epSlide.querySelectorAll('.slide');
-  const dots=epDots.querySelectorAll('.slide-dot');
+  const slides=epSlide.querySelectorAll('.slide'), dots=epDots.querySelectorAll('.slide-dot');
   slides[idx].classList.remove('active'); dots[idx].classList.remove('active');
   idx=((i%slides.length)+slides.length)%slides.length;
-  slides[idx].classList.add('active'); dots[idx].classList.add('active');
-  resetProg();
+  slides[idx].classList.add('active'); dots[idx].classList.add('active'); resetProg();
 }
-
 function startAuto(){ stopAuto(); animProg(); timer=setInterval(()=>goSlide(idx+1),DUR); }
 function stopAuto(){ clearInterval(timer); epProg.style.transition='none'; epProg.style.width='0%'; }
 function resetProg(){ clearInterval(timer); animProg(); timer=setInterval(()=>goSlide(idx+1),DUR); }
-function animProg(){
-  epProg.style.transition='none'; epProg.style.width='0%';
-  requestAnimationFrame(()=>requestAnimationFrame(()=>{
-    epProg.style.transition=`width ${DUR}ms linear`; epProg.style.width='100%';
-  }));
-}
-
-epClose.onclick=closeExhibit;
-backdrop.onclick=closeExhibit;
-epPrev.onclick=()=>goSlide(idx-1);
-epNext.onclick=()=>goSlide(idx+1);
-
-epTabs.querySelectorAll('.exp-tab').forEach(tab=>{
-  tab.onclick=()=>{
-    epTabs.querySelectorAll('.exp-tab').forEach(t=>t.classList.remove('active'));
-    document.querySelectorAll('.exp-tab-panel').forEach(p=>p.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById('tab-'+tab.dataset.tab).classList.add('active');
-  };
-});
-
-document.addEventListener('keydown',e=>{
-  if(!overlay.classList.contains('active'))return;
-  if(e.key==='Escape') closeExhibit();
-  if(e.key==='ArrowLeft') goSlide(idx-1);
-  if(e.key==='ArrowRight') goSlide(idx+1);
-});
-
+function animProg(){ epProg.style.transition='none'; epProg.style.width='0%'; requestAnimationFrame(()=>requestAnimationFrame(()=>{ epProg.style.transition=`width ${DUR}ms linear`; epProg.style.width='100%'; })); }
+epClose.onclick=closeExhibit; backdrop.onclick=closeExhibit;
+epPrev.onclick=()=>goSlide(idx-1); epNext.onclick=()=>goSlide(idx+1);
+epTabs.querySelectorAll('.exp-tab').forEach(tab=>{ tab.onclick=()=>{ epTabs.querySelectorAll('.exp-tab').forEach(t=>t.classList.remove('active')); document.querySelectorAll('.exp-tab-panel').forEach(p=>p.classList.remove('active')); tab.classList.add('active'); document.getElementById('tab-'+tab.dataset.tab).classList.add('active'); }; });
+document.addEventListener('keydown',e=>{ if(!overlay.classList.contains('active'))return; if(e.key==='Escape')closeExhibit(); if(e.key==='ArrowLeft')goSlide(idx-1); if(e.key==='ArrowRight')goSlide(idx+1); });
 let tx=0;
 epSlide.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;});
-epSlide.addEventListener('touchend',e=>{
-  const dx=e.changedTouches[0].clientX-tx;
-  if(Math.abs(dx)>44){if(dx<0)goSlide(idx+1);else goSlide(idx-1);}
-});
-
-document.querySelectorAll('.exhibit-zone').forEach(el=>{
-  el.addEventListener('click',()=>openExhibit(el.dataset.exhibit));
-});
+epSlide.addEventListener('touchend',e=>{ const dx=e.changedTouches[0].clientX-tx; if(Math.abs(dx)>44){if(dx<0)goSlide(idx+1);else goSlide(idx-1);} });
+document.querySelectorAll('.exhibit-zone').forEach(el=>{ el.addEventListener('click',()=>openExhibit(el.dataset.exhibit)); });
 </script>
 </body>
 </html>
